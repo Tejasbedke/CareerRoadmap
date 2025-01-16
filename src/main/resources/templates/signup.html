@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+<a href="index.html" class="home-btn">
+    Home
+</a>
+<div class="container">
+    <div class="bg" style="background-image: url('static/images/bg-01.jpg');">
+        <div class="cards">
+            <form class="form" id="signupForm" action="/signup" method="POST" onsubmit="return validateForm(event)"  enctype="multipart/form-data">
+                <h1 class="title">Sign Up</h1>
+
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" id="username" name="username" required>
+                    <span class="error" id="username-error"></span>
+                </div>
+
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                    <span class="error" id="fullName-error"></span>
+                </div>
+
+                <div class="input-group">
+                    <label>Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <span class="error" id="dob-error"></span>
+                </div>
+
+                <div class="input-group">
+                    <label>Education Status</label>
+                    <select id="educationStatus" name="educationStatus" required>
+                        <option value="">Select education status</option>
+                        <option value="high-school">High School</option>
+                        <option value="undergraduate">Undergraduate</option>
+                        <option value="graduate">Graduate</option>
+                        <option value="post-graduate">Post Graduate</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <span class="error" id="educationStatus-error"></span>
+                </div>
+
+                <!--<div class="input-group">
+                    <label for="profilePic">Profile Picture</label>
+                    <input type="file" id="profilePic" name="profilePic" accept="image/*" onchange="previewImage(event)" required>
+                    <img id="imagePreview" class="profile-preview" alt="Profile preview">
+                    <span class="error" id="profilePic-error"></span>
+                </div>-->
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error" id="email-error"></span>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="error" id="password-error"></span>
+                </div>
+
+                <div class="input-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <span class="error" id="confirmPassword-error"></span>
+                </div>
+
+                <div class="input-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" id="mobileNumber" name="mobileNumber" required>
+                    <span class="error" id="mobileNumber-error"></span>
+                </div>
+
+                <div class="input-group">
+                    <label>Description</label>
+                    <textarea id="description" name="description" placeholder="Tell us about yourself..."></textarea>
+                </div>
+
+                <div class="btn-wrap">
+                    <button class="btn" type="submit">
+                        <span class="btn-bg"></span>
+                        <span class="btn-text">Sign Up</span>
+                    </button>
+                </div>
+
+                <div class="divider">
+                    <span>Or Sign Up Using</span>
+                </div>
+
+                <div class="social">
+                    <a href="#" class="social-btn">
+                        <img src="images/facebooklogo.jpg" alt="Facebook">
+                    </a>
+                    <a href="#" class="social-btn">
+                        <img src="images/googlelogo.png" alt="Google">
+                    </a>
+                </div>
+
+                <div class="signup">
+                    <span>Already have an account?</span>
+                    <a href="login.html">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+   /* function previewImage(event) {
+        const file = event.target.files[0];
+        const preview = document.getElementById('imagePreview');
+
+        if (file) {
+            if (file.size > 5 * 1024 * 1024) { // 5MB limit
+                showError('profilePic', 'File size should be less than 5MB');
+                event.target.value = '';
+                preview.style.display = 'none';
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function() {
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            }
+            reader.readAsDataURL(file);
+        }
+    }*/
+
+    function showError(fieldId, message) {
+        const errorDiv = document.getElementById(`${fieldId}-error`);
+        const field = document.getElementById(fieldId);
+        errorDiv.textContent = message;
+        errorDiv.style.display = 'block';
+        field.classList.add('input-error');
+    }
+
+    function clearError(fieldId) {
+        const errorDiv = document.getElementById(`${fieldId}-error`);
+        const field = document.getElementById(fieldId);
+        errorDiv.style.display = 'none';
+        field.classList.remove('input-error');
+    }
+
+    function validateForm(event) {
+        let isValid = true;
+
+        // Clear all errors first
+        document.querySelectorAll('.error').forEach(error => error.style.display = 'none');
+        document.querySelectorAll('input, select').forEach(input => input.classList.remove('input-error'));
+
+        // Username validation
+        const username = document.getElementById('username').value;
+        if (username.length < 3) {
+            showError('username', 'Username must be at least 3 characters');
+            isValid = false;
+        }
+
+        // Email validation
+        const email = document.getElementById('email').value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showError('email', 'Invalid email format');
+            isValid = false;
+        }
+
+        // Password validation
+        const password = document.getElementById('password').value;
+        if (password.length < 8) {
+            showError('password', 'Password must be at least 8 characters');
+            isValid = false;
+        }
+
+        // Confirm password validation
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        if (password !== confirmPassword) {
+            showError('confirmPassword', 'Passwords do not match');
+            isValid = false;
+        }
+
+        // Mobile number validation
+        const mobileNumber = document.getElementById('mobileNumber').value;
+        const phoneRegex = /^\d{10}$/;
+        if (!phoneRegex.test(mobileNumber)) {
+            showError('mobileNumber', 'Invalid mobile number format (10 digits)');
+            isValid = false;
+        }
+
+        // DOB validation
+        const dob = new Date(document.getElementById('dob').value);
+        const age = new Date().getFullYear() - dob.getFullYear();
+        if (age < 13) {
+            showError('dob', 'You must be at least 13 years old');
+            isValid = false;
+        }
+
+        // If the form is valid, submit it
+        if (isValid) {
+            return true;  // Allow form submission
+        } else {
+            event.preventDefault();  // Prevent form submission if invalid
+            return false;  // Don't submit the form
+        }
+    }
+
+</script>
+</body>
+</html>

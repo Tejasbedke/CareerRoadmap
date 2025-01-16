@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Roadmap</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="bgimage" style="background-image: url('/images/bg-01.jpg');">
+    <!-- Header with Menu and Login/Signup buttons -->
+    <header>
+        <div class="menu-container">
+            <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
+            <nav class="menu">
+                <ul>
+                    <li><a th:href="@{/index}"class="home-logo"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#">My Roadmaps</a></li>
+                    <li><a href="#">Chatbot Assistant</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <a th:href="@{/login}" class="login" >
+            <button class="glow-on-hover login-btn" type="submit">Login</button></a>
+            <a th:href="@{/signup}" class="signup">
+            <button class="glow-on-hover signup-btn">Sign Up</button></a>
+        </div>
+   
+    </header>
+
+    <!-- Main Section with Career Options -->
+    <main>
+        <section id="categories" class="categories">
+            <div class="logo-container">
+                <img src="images/cr_logo.jpg" alt="logo" class="logo">
+                <h1 class="animated-title">Career Roadmap</h1>
+            </div>
+            <div class="category" id="higher-secondary" data-target="higher">
+                <h3>Higher Secondary</h3>
+                <b><p>Guidance for students after 10th or 12th grade.</p></b>
+            </div>
+            
+            <div class="category" id="degree-education" data-target="degree">
+                <h3>Degree Education</h3>
+                <b><p>Explore undergraduate and postgraduate programs.</p></b>
+            </div>
+            
+            <div class="category" id="professional-courses" data-target="pro">
+                <h3>Professional Courses</h3>
+                <b><p>Find specialized professional courses.</p></b>
+            </div>     
+            <div class="category" id="phd-edu" data-target="phd">
+                <h3>PhD</h3>
+                <b><p>Pursue advanced research in your chosen field.</p></b>
+            </div>
+            
+        </section>
+ 
+        <section class="career-options" id="degree">
+            <div class="career-list">
+                <a th:href="@{/engineering}"><div class="career-item">
+                    <span class="heading"><h3>Engineering</h3></span>
+                    <p class="career-description">Engineering offers a wide range of opportunities in fields like civil, mechanical, computer science, and electrical engineering. It is one of the most in-demand careers in India.</p>
+                </div></a>
+                <a th:href="@{/medical}"><div class="career-item">
+                    <span class="heading"><h3>Medical & Healthcare</h3></span>
+                    <p class="career-description">A career in Medical & Healthcare includes roles like doctors, nurses, and medical researchers. It's a rewarding and respected profession with various specializations.</p>
+                </div></a>
+                <a th:href="@{/law}"><div class="career-item">
+                    <span class="heading"><h3>Law & Legal Services</h3></span>
+                    <p class="career-description">Law offers opportunities as lawyers, judges, or legal advisors, working in fields like criminal law, corporate law, and human rights law.</p>
+                </div></a>
+                <a th:href="@{/information}"><div class="career-item">
+                    <span class="heading"><h3>Information Technology</h3></span>
+                    <p class="career-description">Information Technology offers diverse career options in software development, IT consulting, cybersecurity, and AI, shaping the digital future.</p>
+                </div></a>
+                <a th:href="@{/creative}"><div class="career-item">
+                    <span class="heading"><h3>Creative Arts & Social Media</h3></span>
+                    <p class="career-description">Creative careers in arts and design include roles in graphic design, animation, fashion design, and fine arts. This field allows individuals to express creativity and innovation.</p>
+                </div></a>
+                <a th:href="@{/business}"><div class="career-item">
+                    <span class="heading"><h3>Business & Management</h3></span>
+                    <p class="career-description">Management careers span areas like business, finance, marketing, and HR. It offers high growth opportunities in corporate and entrepreneurial settings.</p>
+                </div></a>
+                <a th:href="@{/goverment}"><div class="career-item">
+                    <span class="heading"><h3>Government & Public Sector</h3></span>
+                    <p class="career-description">Government services offer roles in administration, law enforcement, military, and public policy, providing job security and opportunities to serve the public.</p>
+                </div></a>
+                <a th:href="@{/finance}"><div class="career-item">
+                    <span class="heading"><h3>Finance & Accounting</h3></span>
+                    <p class="career-description">A career in finance involves roles in banking, investment, insurance, and accounting. This field offers high earning potential and stability.</p>
+                </div></a>
+                <a th:href="@{/science}"><div class="career-item">
+                    <span class="heading"><h3>Science & Research</h3></span>
+                    <p class="career-description">A career in science and research involves exploring new knowledge and solving real-world problems through experiments and analysis.</p>
+                </div></a>
+                <a th:href="@{/education}"><div class="career-item">
+                    <span class="heading"><h3>Education & Academic</h3></span>
+                    <p class="career-description">Careers in education range from being a school teacher to an educational consultant or administrator. This field focuses on shaping future generations.</p>
+                </div></a>
+                <a th:href="@{/agriculture}"><div class="career-item">
+                    <span class="heading"><h3>Agriculture & Allied Fields</h3></span>
+                    <p class="career-description">Agriculture offers opportunities in farming, agribusiness, agricultural research, and food technology, playing a key role in India's economy and sustainability.</p>
+                </div>  </a>
+                <a th:href="@{/skilled}"><div class="career-item">
+                    <span class="heading"><h3>Skilled Trades</h3></span>
+                    <p class="career-description">Skilled trades careers involve hands-on work in areas like construction, plumbing, electrical, carpentry, welding, and HVAC.</p>
+                </div></a>                
+                <a th:href="@{/hospitality}"><div class="career-item">
+                   <span class="heading"> <h3>Hospitality & Tourism</h3></span>
+                    <p class="career-description">Careers in hospitality include roles in hotels, travel agencies, tourism management, and event planning, offering dynamic and people-focused jobs.</p>
+                </div></a>
+                <a th:href="@{/miscellaneous}"><div class="career-item">
+                   <span class="heading"> <h3>Miscellaneous & Other Professions</h3></span>
+                    <p class="career-description">
+                       Include roles like social worker, psychologist, coach, archaeologist, historian, politician, journalist, translator, librarian, and public relations officer.</p>
+                </div></a>
+                <a th:href="@{/sports}"><div class="career-item">
+                    <span class="heading"><h3>Sports & Fitness</h3></span>
+                    <p class="career-description">Careers in sports include athletes, coaches, and sports managers. The fitness industry offers opportunities for trainers, nutritionists, and wellness experts.</p>
+                </div></a>
+                <a th:href="@{/journalism}"><div class="career-item">
+                    <span class="heading"><h3>Journalism & Media</h3></span>
+                    <p class="career-description">Journalism offers roles in news reporting, editing, and media management, while the media industry spans film, television, and digital content creation.</p>
+                </div></a>
+                <a th:href="@{/aviation}"><div class="career-item">
+                    <span class="heading"><h3>Aviation</h3></span>
+                    <p class="career-description">Aviation careers offer diverse opportunities in fields such as piloting, air traffic control, aircraft maintenance, and airport management. </p>
+                </div></a>
+            </div>
+        </section>
+        <section class="career-options" id="higher"> <h1>Higher Secondary Education Options in India</h1>
+
+            <div class="section1">
+                <h2>1. Regular Streams in Higher Secondary Education</h2>
+                <h3>a. Science Stream</h3>
+                <ul>
+                    <li>Subjects: Physics, Chemistry, Mathematics (PCM) or Biology (PCB), Optional: Computer Science, Biotechnology, etc.</li>
+                    <li>Career Opportunities: Engineering, Medicine, Research, Data Science, etc.</li>
+                    <li>Boards: CBSE, ICSE, State Boards</li>
+                </ul>
+                <h3>b. Commerce Stream</h3>
+                <ul>
+                    <li>Subjects: Accountancy, Business Studies, Economics, Mathematics (Optional)</li>
+                    <li>Career Opportunities: Chartered Accountancy (CA), Company Secretary (CS), Business Management</li>
+                    <li>Boards: CBSE, ICSE, State Boards</li>
+                </ul>
+                <h3>c. Arts/Humanities Stream</h3>
+                <ul>
+                    <li>Subjects: History, Political Science, Sociology, Psychology, Geography, Fine Arts</li>
+                    <li>Career Opportunities: Civil Services, Law, Journalism</li>
+                    <li>Boards: CBSE, ICSE, State Boards</li>
+                </ul>
+            </div>
+        
+            <div class="section1">
+                <h2>2. Vocational Education (Skill-Based Courses)</h2>
+                <ul>
+                    <li>Courses: Tourism and Hospitality Management, Retail Management, IT, Fashion Design</li>
+                    <li>Offered By: National Institute of Open Schooling (NIOS), CBSE, State Boards</li>
+                </ul>
+            </div>
+        
+            <div class="section1">
+                <h2>3. Specialized School Systems</h2>
+                <h3>a. International Curriculums</h3>
+                <ul>
+                    <li>Examples: International Baccalaureate (IB), Cambridge International A Levels</li>
+                    <li>Focus: Global exposure, interdisciplinary studies</li>
+                </ul>
+                <h3>b. Open Schooling</h3>
+                <ul>
+                    <li>Examples: National Institute of Open Schooling (NIOS)</li>
+                    <li>Focus: Flexible learning</li>
+                </ul>
+                <h3>c. Integrated Coaching Programs</h3>
+                <ul>
+                    <li>Examples: Coaching for JEE, NEET, Olympiads alongside Class 11-12</li>
+                </ul>
+            </div>
+        
+            <div class="section1">
+                <h2>4. Diploma Courses After Class 10</h2>
+                <ul>
+                    <li>Examples: Polytechnic Diploma (Engineering), Diploma in Fashion Designing</li>
+                    <li>Offered By: Technical Education Boards, ITI, NSDC-certified centers</li>
+                </ul>
+            </div>
+        
+            <div class="section1">
+                <h2>5. Alternative Options</h2>
+                <h3>a. State-Specific Models</h3>
+                <ul>
+                    <li>HSC: Higher Secondary Certificate (Maharashtra, Tamil Nadu)</li>
+                    <li>PUC: Pre-University Courses (Karnataka)</li>
+                </ul>
+                <h3>b. Skill Development Programs</h3>
+                <ul>
+                    <li>Examples: Short-term courses in Data Entry, Mobile Repairing</li>
+                    <li>Certificates by NSDC</li>
+                </ul>
+                <h3>c. Sports and Performing Arts Schools</h3>
+                <ul>
+                    <li>Sports Schools: SAI academies</li>
+                    <li>Performing Arts Schools: Dance, Music, Drama</li>
+                </ul>
+            </div>
+        
+            <div class="section1">
+                <h2>6. Religious and Traditional Studies</h2>
+                <ul>
+                    <li>Madrasas: Islamic studies with secular subjects</li>
+                    <li>Vedic Schools/Gurukuls: Sanskrit, Vedas, Hindu scriptures</li>
+                </ul>
+            </div>
+            <div class="section1">
+                <h2>7. Boards Offering Higher Secondary Education</h2>
+                <ul>
+                    <li><strong>CBSE</strong>: Central Board of Secondary Education</li>
+                    <li><strong>ICSE/ISC</strong>: Indian Certificate of Secondary Education</li>
+                    <li><strong>NIOS</strong>: National Institute of Open Schooling</li>
+                    <li><strong>State Boards</strong>: Maharashtra HSC, Tamil Nadu HSE, Karnataka PUC, etc.</li>
+                    <li><strong>IB</strong>: International Baccalaureate</li>
+                    <li><strong>Cambridge International</strong>: IGCSE and A Levels</li>
+                </ul>
+            </div>
+        </section>
+        <section class="career-options" id="pro">
+            <h1>Professional Courses Career Options</h1>
+
+    <div class="section1">
+        <h2>1. Chartered Accountancy (CA)</h2>
+        <ul>
+            <li><strong>Path:</strong> After Class 12 (Commerce)</li>
+            <li><strong>Key Institutes:</strong> ICAI</li>
+            <li><strong>Career Opportunities:</strong> Accountant, Auditor, Tax Consultant</li>
+        </ul>
+    </div>
+
+    <div class="section1">
+        <h2>2. Company Secretary (CS)</h2>
+        <ul>
+            <li><strong>Path:</strong> After Class 12 (Commerce)</li>
+            <li><strong>Key Institutes:</strong> ICSI</li>
+            <li><strong>Career Opportunities:</strong> Company Secretary, Corporate Governance Expert</li>
+        </ul>
+    </div>
+
+    <div class="section1">
+        <h2>3. Cost and Management Accountancy (CMA)</h2>
+        <ul>
+            <li><strong>Path:</strong> After Class 12 (Commerce)</li>
+            <li><strong>Key Institutes:</strong> ICMAI</li>
+            <li><strong>Career Opportunities:</strong> Cost Accountant, Financial Analyst</li>
+        </ul>
+    </div>
+
+    <div class="section1">
+        <h2>4. Animation and Multimedia</h2>
+        <h3>Professional Course</h3>
+        <ul>
+            <li><strong>Path:</strong> After Class 12 (Any stream)</li>
+            <li><strong>Key Institutes:</strong> Arena Multimedia, MAAC</li>
+            <li><strong>Career Opportunities:</strong> Animator, Visual Effects Artist, Graphic Designer</li>
+        </ul>
+        <h3>Degree Program</h3>
+        <ul>
+            <li><strong>Path:</strong> After Class 12 (Any stream)</li>
+            <li><strong>Key Institutes:</strong> Various universities offering BFA in Animation, BA in Multimedia</li>
+            <li><strong>Career Opportunities:</strong> Animator, Multimedia Designer, Graphic Designer</li>
+        </ul>
+    </div>
+
+    <div class="section1">
+        <h2>5. Aviation and Pilot Training</h2>
+        <h3>Professional Course</h3>
+        <ul>
+            <li><strong>Path:</strong> After Class 12 (Any stream)</li>
+            <li><strong>Key Institutes:</strong> DGCA, Private Aviation Schools</li>
+            <li><strong>Career Opportunities:</strong> Pilot, Ground Crew, Air Hostess</li>
+        </ul>
+        <h3>Degree Program</h3>
+        <ul>
+            <li><strong>Path:</strong> After Class 12 (Any stream)</li>
+            <li><strong>Key Institutes:</strong> Universities offering BBA in Aviation, B.Sc. in Aviation</li>
+            <li><strong>Career Opportunities:</strong> Airline Pilot, Aviation Manager, Airport Operations</li>
+        </ul>
+    </div>
+
+    <div class="section1">
+        <h2>6. Fashion Designing</h2>
+        <h3>Professional Course</h3>
+        <ul>
+            <li><strong>Path:</strong> After Class 12 (Any stream)</li>
+            <li><strong>Key Institutes:</strong> NIFT, NID, Private Fashion Institutes</li>
+            <li><strong>Career Opportunities:</strong> Fashion Designer, Textile Designer, Costume Designer</li>
+        </ul>
+        <h3>Degree Program</h3>
+        <ul>
+            <li><strong>Path:</strong> After Class 12 (Any stream)</li>
+            <li><strong>Key Institutes:</strong> Universities offering B.Des (Bachelor of Design), BFA in Fashion Designing</li>
+            <li><strong>Career Opportunities:</strong> Fashion Designer, Fashion Merchandiser, Textile Designer</li>
+        </ul>
+    </div>
+
+    <div class="section1">
+        <h2>7. Event Management</h2>
+        <ul>
+            <li><strong>Path:</strong> After Class 12 (Any stream)</li>
+            <li><strong>Key Institutes:</strong> Event Management Institutes</li>
+            <li><strong>Career Opportunities:</strong> Event Planner, Coordinator, Wedding Planner</li>
+        </ul>
+    </div>
+
+    <div class="section1">
+        <h2>8. Travel and Tourism Management</h2>
+        <h3>Professional Course</h3>
+        <ul>
+            <li><strong>Path:</strong> After Class 12 (Any stream)</li>
+            <li><strong>Key Institutes:</strong> IATA, TATA Institute</li>
+            <li><strong>Career Opportunities:</strong> Travel Consultant, Tour Operator, Travel Blogger</li>
+        </ul>
+        <h3>Degree Program</h3>
+        <ul>
+            <li><strong>Path:</strong> After Class 12 (Any stream)</li>
+            <li><strong>Key Institutes:</strong> Universities offering BA in Tourism, BBA in Travel and Tourism</li>
+            <li><strong>Career Opportunities:</strong> Travel Manager, Tourism Planner, Tour Operator</li>
+        </ul>
+    </div>
+
+    <div class="section1">
+        <h2>9. Public Relations (PR)</h2>
+        <ul>
+            <li><strong>Path:</strong> After Class 12 (Any stream)</li>
+            <li><strong>Key Institutes:</strong> PR Colleges, Communication Institutes</li>
+            <li><strong>Career Opportunities:</strong> PR Executive, Media Relations Manager, Brand Strategist</li>
+        </ul>
+    </div>
+
+    <div class="section1">
+        <h2>10. Television and Film Production</h2>
+        <ul>
+            <li><strong>Path:</strong> After Class 12 (Any stream)</li>
+            <li><strong>Key Institutes:</strong> FTII, Whistling Woods International</li>
+            <li><strong>Career Opportunities:</strong> Producer, Director, Cinematographer</li>
+        </ul>
+    </div>
+        </section>
+        <section class="career-options" id="phd">
+            <h1>PhD Career Opportunities in India</h1>
+
+            <div class="phd-list">
+                <h2>PhD Career Opportunities:</h2>
+                <ul>
+                    <li>PhD in Computer Science & Engineering</li>
+                    <li>PhD in Physics</li>
+                    <li>PhD in Mathematics</li>
+                    <li>PhD in Engineering (Various Disciplines)</li>
+                    <li>PhD in Biotechnology</li>
+                    <li>PhD in Medicine (MD/PhD)</li>
+                    <li>PhD in Psychology</li>
+                    <li>PhD in Economics</li>
+                    <li>PhD in Law</li>
+                    <li>PhD in Sociology</li>
+                    <li>PhD in History</li>
+                    <li>PhD in Environmental Science</li>
+                    <li>PhD in Philosophy</li>
+                    <li>PhD in Business Administration (Management)</li>
+                    <li>PhD in Education</li>
+                    <li>PhD in Literature/English</li>
+                    <li>PhD in Chemistry</li>
+                    <li>PhD in Geography</li>
+                    <li>PhD in Social Work</li>
+                    <li>PhD in Management Information Systems (MIS)</li>
+                    <li>PhD in Political Science</li>
+                    <li>PhD in Journalism and Mass Communication</li>
+                    <li>PhD in Architecture</li>
+                    <li>PhD in Library and Information Science</li>
+                    <li>PhD in Agricultural Science</li>
+                    <li>PhD in Fashion Technology</li>
+                    <li>PhD in Veterinary Science</li>
+                    <li>PhD in Nanotechnology</li>
+                    <li>PhD in Renewable Energy</li>
+                    <li>PhD in Linguistics</li>
+                    <li>PhD in Environmental Engineering</li>
+                    <li>PhD in Music</li>
+                    <li>PhD in Dance and Performing Arts</li>
+                    <li>PhD in Clinical Research</li>
+                    <li>PhD in Forensic Science</li>
+                    <li>PhD in Public Health</li>
+                </ul>
+            </div>
+        
+            <div class="general-info">
+                <h2>General Information:</h2>
+                <p>PhD programs are available in a wide range of disciplines and fields in India. Some key details about PhD opportunities are as follows:</p>
+                
+                <h3>Number of Disciplines:</h3>
+                <p>PhD programs are offered in nearly every academic discipline, including:</p>
+                <ul>
+                    <li>Engineering & Technology</li>
+                    <li>Sciences (Physical, Chemical, Biological)</li>
+                    <li>Medical Sciences</li>
+                    <li>Social Sciences (Economics, Sociology, Psychology, etc.)</li>
+                    <li>Humanities (Literature, History, Philosophy, etc.)</li>
+                    <li>Law</li>
+                    <li>Business and Management</li>
+                    <li>Arts and Culture</li>
+                    <li>Education</li>
+                    <li>Environmental Science & Engineering</li>
+                    <li>Agriculture and Veterinary Science</li>
+                    <li>Fine Arts and Performing Arts</li>
+                </ul>
+        
+                <h3>Institutions Offering PhD Programs:</h3>
+                <p>Several prestigious institutions in India offer PhD programs in multiple fields:</p>
+                <ul>
+                    <li><strong>IITs (Indian Institutes of Technology):</strong> 23 IITs offer PhD programs across engineering, technology, and sciences.</li>
+                    <li><strong>IISc (Indian Institute of Science):</strong> Offers PhDs in engineering, physical sciences, life sciences, and interdisciplinary fields.</li>
+                    <li><strong>NITs (National Institutes of Technology):</strong> Over 30 NITs across India offer PhD programs in various fields, mainly in engineering and technology.</li>
+                    <li><strong>Central Universities:</strong> Around 45-50 central universities provide PhD programs across various disciplines.</li>
+                    <li><strong>State Universities:</strong> Hundreds of state universities across India offer PhD programs in a wide array of subjects.</li>
+                    <li><strong>Private Universities:</strong> Numerous private universities like BITS Pilani, Shiv Nadar University, and others offer PhD programs.</li>
+                    <li><strong>Specialized Institutes:</strong> Institutes like TISS, AIIMS, and National Law Universities offer specialized PhDs in social sciences, law, and medical fields.</li>
+                </ul>
+        
+                <h3>Research Areas:</h3>
+                <p>Within each discipline, there are a wide range of specialized research areas. Examples include:</p>
+                <ul>
+                    <li>Engineering: Mechanical, Civil, Electrical, Computer Science, Aerospace, etc.</li>
+                    <li>Sciences: Physics, Chemistry, Biology, Biotechnology, Nanotechnology, etc.</li>
+                    <li>Medical Sciences: Genetics, Immunology, Pharmacology, Microbiology, etc.</li>
+                    <li>Social Sciences: Economics, Political Science, Sociology, Anthropology, etc.</li>
+                    <li>Humanities: History, Literature, Philosophy, Arts, etc.</li>
+                </ul>
+                <p>PhD opportunities in India are vast, offering countless avenues for specialized research and academic growth across diverse fields of study.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Career Roadmap. All rights reserved.</p>
+    </footer>
+</div>
+    <script>
+
+        const menuButton = document.querySelector('.menu-btn');
+        const menu = document.querySelector('.menu');
+        const body = document.body;
+        const careeroptions = document.querySelector('.career-options');
+
+        // Toggle the visibility of the menu when the button is clicked
+        function toggleMenu() {
+            menu.classList.toggle("visible");
+
+
+            // Change the icon from hamburger to cross (or vice versa)
+            setTimeout(() => {
+            if (menu.classList.contains("visible")) {
+                menuButton.innerHTML = "&#10006;"; // Change to cross
+                body.classList.add('menu-open'); // Apply blur and disable clicks
+            } else {
+                 menuButton.innerHTML = "&#9776;"; // Change to hamburger
+                body.classList.remove('menu-open'); // Remove blur and enable clicks
+            }
+            },300);
+        }
+    
+        // Close menu when clicking outside
+        
+        document.addEventListener('click', function (e) {
+            if (!menu.contains(e.target) && !menuButton.contains(e.target)) {
+                // If the click is outside the menu and the menu button, close the menu
+                if (menu.classList.contains('visible')) {
+                    menu.classList.remove('visible');
+                    menuButton.innerHTML = "&#9776;"; // Change to hamburger
+                    body.classList.remove('menu-open'); // Remove blur effect
+                }
+            }
+        });
+
+        // Prevent menu from closing when clicking inside the menu
+        menu.addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent event from propagating to the document
+        });
+
+        document.querySelectorAll('.category').forEach(trigger => {
+            trigger.addEventListener('click', function () {
+                  // Hide all target divs
+                  document.querySelectorAll('.career-options').forEach(target => {
+                    target.style.display = 'none';
+                });
+                // Get the target ID from the data attribute
+                const targetId = this.dataset.target;
+
+                // Find the target div by its ID
+                const targetDiv = document.getElementById(targetId);
+
+                // Toggle the visibility of the target div
+                if (targetDiv) {
+                    targetDiv.style.display = targetDiv.style.display === 'none' || targetDiv.style.display === '' 
+                        ? 'block' 
+                        : 'none';
+                }
+            });
+        });
+        
+
+   </script>
+   
+</body>
+</html>

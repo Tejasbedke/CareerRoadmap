@@ -1,0 +1,503 @@
+/* General Reset */
+* {
+   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* Main Section */
+main {
+    padding: 40px 20px ;
+    background-color: rgba(0, 0, 0, 0.0); 
+    margin-top: 10px;
+    opacity: 1;
+}
+
+.bgimage {
+    width: 100%;  
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+/* Apply blur effect when menu is open */
+body.menu-open .career-options {
+    filter: blur(1px); /* Apply blur effect */
+    pointer-events: none; /* Disable clicking on content */
+}
+
+/* Header Styles */
+header {
+    line-height:2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+     background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.7)
+    );
+    backdrop-filter: blur(5px);
+    color: rgb(255, 255, 255);
+    padding: 8px 20px;
+    z-index: 100;
+    border-radius: 80px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: rgb(255, 17, 0);
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+.menu-btn:hover{
+    text-shadow: 0 0 10px #ffe600, 0 0 20px #f7f307, 0 0 30px #00ff00;
+    box-shadow: yellow;
+    
+}
+
+/* Glow-on-hover Button Styles */
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.glow-on-hover {
+    width: 100px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+.glow-on-hover:hover{
+    /* text-shadow: 0 0 10px #ffe600, 0 0 20px #f7f307, 0 0 30px #00ff00; */
+    box-shadow: yellow;
+    text-shadow: 0 0 10px #ffe600, 
+                 0 0 20px #f7f307, 
+                 0 0 30px #00ff00;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 230, 0, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 230, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 230, 0, 0);
+    }
+}
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+    
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+    
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+
+/* Menu Styles */
+nav.menu {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: -1;
+    background-color: #000000;
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    
+    transform: translateY(-150%);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.9;
+}
+
+nav.menu.visible {
+    display: block;
+    transform: translateY(0%);
+}
+
+nav.menu ul {
+    list-style-type: none;
+}
+
+nav.menu ul li {
+    margin: 15px 0;
+}
+
+nav.menu ul li a {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    font-size: 21px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav.menu ul li a:hover {
+    text-shadow: 0 0 10px #ffe600, 0 0 20px #f7f307, 0 0 30px #00ff00;
+    box-shadow: yellow;
+    text-decoration: underline;
+}
+
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+
+.animated-title {
+    margin-left: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Career List Styles */
+.career-options{
+    margin-top: 30px;
+    display: none;
+    background-color: #e9e9e7;
+    padding-top: 20px;
+    border-radius: 15px;
+}
+.career-list {
+    display: grid;
+    padding: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #111;
+}
+
+.career-item {
+    position: relative;
+    background-color: #b1f1ff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+    height: 350px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: popUp 0.8s ease-out;
+    margin-bottom: 20px;
+}
+.career-list:has(div:hover) div:not(:hover) {
+    filter: blur(1px)
+  }
+
+.career-item:hover {
+    filter: none;
+    transform: scale(1.05);
+    text-shadow: 0 0 10px #ee0000, 0 0 10px #ffff00, 0 0 10px #ffffff;
+    box-shadow: 5px 5px 20px rgb(251, 255, 0);
+}
+.career-item h3 {
+    font-family: Georgia, serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    transition: top 0.3s ease, transform 0.3s ease;
+}
+.career-description {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    border-radius: 8px;
+    line-height: 1.6;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    color: #000000;
+    position: absolute;
+    bottom: -60px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    opacity: 0;
+    transition: top 0.3s ease, opacity 0.3s ease;
+    width: 90%; /* Adjust width as needed */
+    height: 55%;
+}
+.career-item:hover h3 {
+    font-size: 20px;
+    top: 10%; /* Move the title to the top */
+    transform: translateX(-50%);
+}
+.career-item:hover .career-description {     
+    top: 40%; /* Slide the description into view */
+    opacity: 1;
+    transform: translateX(-50%);
+}
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: sticky;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .career-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .animated-title {
+        font-size: 32px;
+    }
+
+    nav.menu ul li a {
+        font-size: 16px;
+    }
+    
+    nav.menu {
+        padding-top: 50px;
+        line-height: 2;
+        height: 720px;
+        width:  70%;
+        top: 70px; /* Reset any previous top position */
+        left: -100%; /* Initially hide the menu off-screen to the left */
+        border-radius: 15px;
+        display: flex;
+        flex-direction: row; /* Arrange menu items horizontally */
+        align-items: center;
+        justify-content: flex-start;
+        transition: left 0.5s ease-in-out; /* Slide effect */
+    }
+    header{
+        background-color: rgba(0, 0, 0,0.9);
+    }
+    
+    /* To toggle visibility when menu is active */
+    nav.menu.visible {
+        left: 05%; /* Slide menu in from the left */
+    }
+
+    .menu-btn {
+        font-size: 30px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .career-list {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-btn {
+        font-size: 25px;
+    }
+
+    nav.menu ul li a {
+        font-size: 16px;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .animated-title {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .glow-on-hover {
+        width: 140px;
+        height: 45px;
+        font-size: 14px;
+    }
+}
+
+/* Larger screens (optional for responsive behavior) */
+@media only screen and (min-width: 601px) {
+    .glow-on-hover {
+        width: 80px; /* Default size */
+        height: 40px; /* Default size */
+        font-size: 14px; /* Default font size */
+    }
+}
+.category{
+    display: inline-block;
+    position: relative;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+    height: 100px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: popUp 0.8s ease-out;
+    box-shadow: 0 0 10px #fdec00, 0 0 20px #f6f86b, 0 0 30px #e9e9e7;
+    margin: 20px 50px 20px 50px;
+}
+.categories{
+    text-align: center;
+    margin-top: 30px;
+    
+}
+.categories .category .p{
+    font-size: 10px;
+}
+
+.section1 h1, h2, h3 {
+    color: #ff0000;
+}
+.section1 ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+.section1 li {
+    margin-bottom: 5px;
+}
+.section1 {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(0 255 250 / 70%);
+}
+
+.phd-list, .general-info {
+    margin: 20px;
+}
+
+
+
+
+
+
+
+
+
