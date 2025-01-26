@@ -22,7 +22,13 @@ public class roadmapcontroller {
     @GetMapping("/")
    public String home() {
         return "index"; // Corresponds to src/main/resources/templates/index.html
+
    }
+    @GetMapping("/index")
+    public String index() {
+        return "index"; // Corresponds to src/main/resources/templates/index.html
+
+    }
 
    @GetMapping("/law")
     public  String law(){
@@ -33,9 +39,74 @@ public class roadmapcontroller {
     public String showLoginForm() {
         return "login"; // This renders login.html
     }
+    @GetMapping("/engineering")
+    public String showengineering() {
+        return "engineering";
+    }
+    @GetMapping("/medical")
+    public String showmedical() {
+        return "medical";
+    }
+    @GetMapping("/information")
+    public String showinformation() {
+        return "information";
+    }
+    @GetMapping("/creative")
+    public String showcreative() {
+        return "creative";
+    }
+    @GetMapping("/business")
+    public String showbusiness() {
+        return "business";
+    }
+    @GetMapping("/goverment")
+    public String showgoverment() {
+        return "goverment";
+    }
+    @GetMapping("/finance")
+    public String showfinance() {
+        return "finance";
+    }
+    @GetMapping("/science")
+    public String showscience() {
+        return "science";
+    }
+    @GetMapping("/education")
+    public String showeducation() {
+        return "education";
+    }
+    @GetMapping("/agriculture")
+    public String showagriculture() {
+        return "medical";
+    }
+    @GetMapping("/skilled")
+    public String showskilled() {
+        return "skilled";
+    }
+    @GetMapping("/hospitality")
+    public String showhospital() {
+        return "hospitality";
+    }
+    @GetMapping("/miscellaneous")
+    public String showmiss() {
+        return "miscellaneous";
+    }
+    @GetMapping("/sports")
+    public String showsports() {
+        return "sports";
+    }
+
     @GetMapping("/signup-success")
     public String showsuccessSignup() {
         return "signup-success"; // This renders login.html
+    }
+    @GetMapping("/journalism")
+    public String showjournalism() {
+        return "journalism";
+    }
+    @GetMapping("/aviation")
+    public String showaviation() {
+        return "aviation";
     }
 
     @PostMapping("/login")

@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-<a href="index.html" class="home-btn">
+<a th:href="@{/index}" class="home-btn">
 	Home
 </a>
 <div class="container">
@@ -50,8 +50,9 @@
 					</a>
 				</div>
 
+
 				<div class="signup">
-					<a href="signup.html">Sign Up</a>
+					<a th:href="@{/signup}">Sign Up</a>
 				</div>
 			</form>
 		</div>
