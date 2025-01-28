@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Career Roadmap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #3498db;
+            width: 65%;
+            transition: width 0.3s ease;
+        }
+
+        .milestone-list {
+            list-style: none;
+        }
+
+        .milestone {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .milestone:hover {
+            background-color: #f5f5f5;
+        }
+
+        .milestone-checkbox {
+            margin-right: 1rem;
+        }
+
+        .roadmap-container {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .roadmap-stage {
+            border-left: 3px solid #3498db;
+            margin-left: 2rem;
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .roadmap-stage::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: #3498db;
+            border-radius: 50%;
+            position: absolute;
+            left: -11px;
+            top: 0;
+        }
+
+        .stage-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .task-list {
+            list-style: none;
+        }
+
+        .task-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .add-task-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-task-btn:hover {
+            background: #2980b9;
+        }
+
+        .resources-section {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .resource-link {
+            display: block;
+            color: #3498db;
+            text-decoration: none;
+            margin: 0.5rem 0;
+        }
+
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            margin: 100px auto;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .task-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .edit-btn {
+            background: #f39c12;
+            color: white;
+        }
+
+        .delete-btn {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #e1f0fa;
+            padding: 0.25rem 0.5rem;
+            border-radius: 15px;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <h1>Your Career Roadmap</h1>
+        <p>Software Development Career Path</p>
+    </div>
+</header>
+
+<main class="container">
+    <div class="dashboard-grid">
+        <aside class="sidebar">
+            <div class="progress-section">
+                <h2>Overall Progress</h2>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p>65% Complete</p>
+            </div>
+
+            <div class="milestone-list">
+                <h2>Key Milestones</h2>
+                <div class="milestone">
+                    <input type="checkbox" class="milestone-checkbox" checked>
+                    <span>Complete Basic Programming Course</span>
+                </div>
+                <div class="milestone">
+                    <input type="checkbox" class="milestone-checkbox" checked>
+                    <span>Build First Project</span>
+                </div>
+                <div class="milestone">
+                    <input type="checkbox" class="milestone-checkbox">
+                    <span>Internship Experience</span>
+                </div>
+            </div>
+
+            <div class="resources-section">
+                <h2>Recommended Resources</h2>
+                <a href="#" class="resource-link">Programming Fundamentals Course</a>
+                <a href="#" class="resource-link">Web Development Bootcamp</a>
+                <a href="#" class="resource-link">Algorithm Practice Platform</a>
+                <button class="add-task-btn">Add Resource</button>
+            </div>
+        </aside>
+
+        <div class="roadmap-container">
+            <div class="roadmap-stage">
+                <div class="stage-header">
+                    <h2>Foundation Stage</h2>
+                    <span>3 months</span>
+                </div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <div>
+                            <h3>Learn HTML & CSS</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS3</span>
+                            </div>
+                        </div>
+                        <div class="task-actions">
+                            <button class="button edit-btn">Edit</button>
+                            <button class="button delete-btn">Delete</button>
+                        </div>
+                    </li>
+                    <li class="task-item">
+                        <div>
+                            <h3>JavaScript Basics</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">ES6</span>
+                            </div>
+                        </div>
+                        <div class="task-actions">
+                            <button class="button edit-btn">Edit</button>
+                            <button class="button delete-btn">Delete</button>
+                        </div>
+                    </li>
+                </ul>
+                <button class="add-task-btn">Add Task</button>
+            </div>
+
+            <div class="roadmap-stage">
+                <div class="stage-header">
+                    <h2>Intermediate Stage</h2>
+                    <span>6 months</span>
+                </div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <div>
+                            <h3>React Framework</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Redux</span>
+                            </div>
+                        </div>
+                        <div class="task-actions">
+                            <button class="button edit-btn">Edit</button>
+                            <button class="button delete-btn">Delete</button>
+                        </div>
+                    </li>
+                </ul>
+                <button class="add-task-btn">Add Task</button>
+            </div>
+
+            <div class="roadmap-stage">
+                <div class="stage-header">
+                    <h2>Advanced Stage</h2>
+                    <span>9 months</span>
+                </div>
+                <ul class="task-list">
+                    <li class="task-item">
+                        <div>
+                            <h3>System Design</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Architecture</span>
+                                <span class="skill-tag">Scalability</span>
+                            </div>
+                        </div>
+                        <div class="task-actions">
+                            <button class="button edit-btn">Edit</button>
+                            <button class="button delete-btn">Delete</button>
+                        </div>
+                    </li>
+                </ul>
+                <button class="add-task-btn">Add Task</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="modal" id="taskModal">
+    <div class="modal-content">
+        <h2>Add/Edit Task</h2>
+        <form id="taskForm">
+            <!-- Form fields would go here -->
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Add click handlers for buttons
+    document.querySelectorAll('.add-task-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            // Show modal logic would go here
+            alert('Add task functionality would open a modal');
+        });
+    });
+
+    document.querySelectorAll('.edit-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            alert('Edit functionality would open a modal');
+        });
+    });
+
+    document.querySelectorAll('.delete-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            alert('Delete confirmation would appear');
+        });
+    });
+
+    // Update progress bar based on completed tasks
+    document.querySelectorAll('.milestone-checkbox').forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            // Progress update logic would go here
+            alert('Progress updated');
+        });
+    });
+</script>
+</body>
+</html>

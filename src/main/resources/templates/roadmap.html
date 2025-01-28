@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Details</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            margin-bottom: 10px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background: #f7f9fc;
+            padding: 10px;
+            border-radius: 4px;
+            border-left: 4px solid #3498db;
+        }
+
+        .roadmap-timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .roadmap-item {
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #f7f9fc;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            background: #3498db;
+            border-radius: 50%;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 15px;
+            background: #f7f9fc;
+            border-radius: 4px;
+        }
+
+        .resources-list {
+            list-style: none;
+        }
+
+        .resources-list li {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f7f9fc;
+            border-radius: 4px;
+        }
+
+        .resources-list a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <h1 id="career-title">Career Title</h1>
+        <p id="career-subtitle">Career subtitle or brief description</p>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Overview Section -->
+    <div class="section">
+        <h2>Overview</h2>
+        <div id="overview-content">
+            <!-- Content will be populated from database -->
+        </div>
+    </div>
+
+    <!-- Skills Required Section -->
+    <div class="section">
+        <h2>Skills Required</h2>
+        <div class="skills-grid" id="skills-content">
+            <!-- Skills will be populated from database -->
+        </div>
+    </div>
+
+    <!-- Career Roadmap Section -->
+    <div class="section">
+        <h2>Career Roadmap</h2>
+        <div class="roadmap-timeline" id="roadmap-content">
+            <!-- Roadmap will be populated from database -->
+        </div>
+    </div>
+
+    <!-- Educational Path Section -->
+    <div class="section">
+        <h2>Educational Path</h2>
+        <div id="education-content">
+            <!-- Education content will be populated from database -->
+        </div>
+    </div>
+
+    <!-- Resources Section -->
+    <div class="section">
+        <h2>Resources</h2>
+        <ul class="resources-list" id="resources-content">
+            <!-- Resources will be populated from database -->
+        </ul>
+    </div>
+
+    <!-- FAQs Section -->
+    <div class="section">
+        <h2>Frequently Asked Questions</h2>
+        <div id="faq-content">
+            <!-- FAQs will be populated from database -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to populate career details
+    function populateCareerDetails(careerData) {
+        // Update header
+        document.getElementById('career-title').textContent = careerData.title;
+        document.getElementById('career-subtitle').textContent = careerData.subtitle;
+
+        // Update overview
+        document.getElementById('overview-content').innerHTML = careerData.overview;
+
+        // Update skills
+        const skillsContent = document.getElementById('skills-content');
+        skillsContent.innerHTML = careerData.skills.map(skill => `
+                <div class="skill-item">${skill}</div>
+            `).join('');
+
+        // Update roadmap
+        const roadmapContent = document.getElementById('roadmap-content');
+        roadmapContent.innerHTML = careerData.roadmap.map(step => `
+                <div class="roadmap-item">
+                    <h3>${step.title}</h3>
+                    <p>${step.description}</p>
+                </div>
+            `).join('');
+
+        // Update education
+        document.getElementById('education-content').innerHTML = careerData.education;
+
+        // Update resources
+        const resourcesList = document.getElementById('resources-content');
+        resourcesList.innerHTML = careerData.resources.map(resource => `
+                <li>
+                    <a href="${resource.url}" target="_blank">${resource.title}</a>
+                    <p>${resource.description}</p>
+                </li>
+            `).join('');
+
+        // Update FAQs
+        const faqContent = document.getElementById('faq-content');
+        faqContent.innerHTML = careerData.faqs.map(faq => `
+                <div class="faq-item">
+                    <div class="faq-question">${faq.question}</div>
+                    <div class="faq-answer">${faq.answer}</div>
+                </div>
+            `).join('');
+
+        // Add click handlers for FAQ items
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    }
+
+    // Example of how to handle data from Java backend
+    async function fetchCareerDetails(careerId) {
+        try {
+            const response = await fetch(`/api/career/${careerId}`);
+            const data = await response.json();
+            populateCareerDetails(data);
+        } catch (error) {
+            console.error('Error fetching career details:', error);
+        }
+    }
+
+    // Example data structure expected from the backend
+    const sampleData = {
+        title: "Software Developer",
+        subtitle: "Design and develop software applications",
+        overview: "Software developers create computer applications, systems, and programs...",
+        skills: [
+            "Java Programming",
+            "Problem Solving",
+            "Database Management",
+            "Web Technologies"
+        ],
+        roadmap: [
+            {
+                title: "Entry Level Developer",
+                description: "Start with basic programming tasks and bug fixes..."
+            },
+            {
+                title: "Senior Developer",
+                description: "Lead development projects and mentor junior developers..."
+            }
+        ],
+        education: "<p>Bachelor's degree in Computer Science or related field...</p>",
+        resources: [
+            {
+                title: "Online Learning Platform",
+                url: "#",
+                description: "Interactive coding tutorials and exercises"
+            }
+        ],
+        faqs: [
+            {
+                question: "What is the average salary?",
+                answer: "The average salary varies by location and experience..."
+            }
+        ]
+    };
+
+    // For testing, populate with sample data
+    populateCareerDetails(sampleData);
+</script>
+</body>
+</html>

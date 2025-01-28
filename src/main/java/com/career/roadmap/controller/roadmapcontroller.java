@@ -108,6 +108,33 @@ public class roadmapcontroller {
     public String showaviation() {
         return "aviation";
     }
+    @GetMapping("verification")
+    public String showverification() {return "verification";}
+    @GetMapping("aboutus")
+    public String showaboutus() {return "aboutus";}
+    @GetMapping("admin")
+    public String showadmin() {return "admin";}
+    @GetMapping("blog")
+    public String showblog() {return "blog";}
+    @GetMapping("faq")
+    public String showfaq() {return "faq";}
+    @GetMapping("myroadmap")
+    public String showmyroadmap() {return "myroadmap";}
+    @GetMapping("profile")
+    public String showprofile() {return "profile";}
+    @GetMapping("roadmap")
+    public String showroadmap() {return "roadmap";}
+    @GetMapping("setting")
+    public String showsetting() {return "setting";}
+    @Controller
+    public class MenuController {
+
+        @GetMapping("/menu")
+        public String getMenuPage() {
+            return "menu"; // Looks for menu.html in /templates/
+        }
+    }
+
 
     @PostMapping("/login")
     public String login(@RequestParam("username") String username,
@@ -137,7 +164,7 @@ public class roadmapcontroller {
         userRepository.save(userDetail);
 
         // Perform a redirect to the signup-success.html page
-        return "redirect:/signup-success";  // This will redirect the user to /signup-success
+        return "redirect:/verification";  // This will redirect the user to /signup-success
     }
 
 

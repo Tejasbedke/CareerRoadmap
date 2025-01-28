@@ -4,171 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information Technology Career Opportunities</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .career-list {
-            margin: 20px;
-        }
-        .category {
-            font-size: 1.2em;
-            color: #0066cc;
-            margin-top: 20px;
-        }
-        .career-item {
-            margin-left: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/careeroptions.css">
+    <script src="scripts/test.js" defer></script>
 </head>
-<body>
-    <h1>Information Technology Career Opportunities in India</h1>
+<body> <div id="menu"></div>
+<div class="bgimage" style="background-image: url('/images/bg-01.jpg');">
+    <!-- Header with Menu and Login/Signup buttons -->
 
-    <div class="career-list">
-        <div class="category">1. Software Development & Programming</div>
-        <ul>
-            <li class="career-item">Software Engineer/Developer</li>
-            <li class="career-item">Frontend Developer</li>
-            <li class="career-item">Backend Developer</li>
-            <li class="career-item">Full Stack Developer</li>
-            <li class="career-item">Mobile App Developer</li>
-            <li class="career-item">Game Developer</li>
-            <li class="career-item">Embedded Systems Developer</li>
-            <li class="career-item">DevOps Engineer</li>
-            <li class="career-item">Test Engineer/QA Engineer</li>
-            <li class="career-item">Systems Programmer</li>
-            <li class="career-item">Database Developer</li>
-        </ul>
 
-        <div class="category">2. Networking & Infrastructure</div>
-        <ul>
-            <li class="career-item">Network Administrator</li>
-            <li class="career-item">Network Engineer</li>
-            <li class="career-item">Network Architect</li>
-            <li class="career-item">Systems Administrator</li>
-            <li class="career-item">Cloud Administrator</li>
-            <li class="career-item">Cloud Architect</li>
-            <li class="career-item">Data Center Technician</li>
-            <li class="career-item">Virtualization Engineer</li>
-            <li class="career-item">Telecommunications Engineer</li>
-        </ul>
+    <div id="divv" class="container">
+        <div class="top-nav">
+            <div class="nav-links">
+                <a href="#it" class="nav-link">Information Technology</a>
 
-        <div class="category">3. Cybersecurity & Information Security</div>
-        <ul>
-            <li class="career-item">Cybersecurity Analyst</li>
-            <li class="career-item">Cybersecurity Engineer</li>
-            <li class="career-item">Penetration Tester (Ethical Hacker)</li>
-            <li class="career-item">Security Architect</li>
-            <li class="career-item">Incident Responder</li>
-            <li class="career-item">Cryptographer</li>
-            <li class="career-item">Forensic Analyst</li>
-            <li class="career-item">Malware Analyst</li>
-            <li class="career-item">Security Consultant</li>
-            <li class="career-item">Compliance Officer</li>
-        </ul>
+            </div>
+        </div>
 
-        <div class="category">4. Data Science, Analytics, & AI</div>
-        <ul>
-            <li class="career-item">Data Scientist</li>
-            <li class="career-item">Data Analyst</li>
-            <li class="career-item">Data Engineer</li>
-            <li class="career-item">Business Intelligence (BI) Developer</li>
-            <li class="career-item">Machine Learning Engineer</li>
-            <li class="career-item">AI/ML Researcher</li>
-            <li class="career-item">Deep Learning Engineer</li>
-            <li class="career-item">Natural Language Processing (NLP) Engineer</li>
-            <li class="career-item">Big Data Engineer</li>
-            <li class="career-item">AI Software Engineer</li>
-        </ul>
+        <div id="it" class="career-category">
+            <h2>Information Technology Career Opportunities in India</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Software Development & Programming</h3>
+                    <ul class="career-list">
+                        <li> <a th:href="@{/roadmap}">Software Engineer/Developer</a></li>
+                        <li>Frontend Developer</li>
+                        <li>Backend Developer</li>
+                        <li>Full Stack Developer</li>
+                        <li>Mobile App Developer</li>
+                        <li>Game Developer</li>
+                        <li>Embedded Systems Developer</li>
+                        <li>DevOps Engineer</li>
+                        <li>Test Engineer/QA Engineer</li>
+                        <li>Systems Programmer</li>
+                        <li>Database Developer</li>
+                    </ul>
+                </div>
 
-        <div class="category">5. Web Development & Design</div>
-        <ul>
-            <li class="career-item">Web Developer</li>
-            <li class="career-item">UI/UX Designer</li>
-            <li class="career-item">Web Application Developer</li>
-            <li class="career-item">Web Designer</li>
-            <li class="career-item">E-commerce Developer</li>
-            <li class="career-item">Web Content Manager</li>
-        </ul>
+                <div class="career-group">
+                    <h3>Networking & Infrastructure</h3>
+                    <ul class="career-list">
+                        <li>Network Administrator</li>
+                        <li>Network Engineer</li>
+                        <li>Network Architect</li>
+                        <li>Systems Administrator</li>
+                        <li>Cloud Administrator</li>
+                        <li>Cloud Architect</li>
+                        <li>Data Center Technician</li>
+                        <li>Virtualization Engineer</li>
+                        <li>Telecommunications Engineer</li>
+                    </ul>
+                </div>
 
-        <div class="category">6. Cloud Computing</div>
-        <ul>
-            <li class="career-item">Cloud Engineer</li>
-            <li class="career-item">Cloud Consultant</li>
-            <li class="career-item">Cloud Solutions Architect</li>
-            <li class="career-item">Cloud Support Engineer</li>
-            <li class="career-item">Cloud Security Engineer</li>
-            <li class="career-item">Cloud Developer</li>
-        </ul>
+                <div class="career-group">
+                    <h3>Cybersecurity & Information Security</h3>
+                    <ul class="career-list">
+                        <li>Cybersecurity Analyst</li>
+                        <li>Cybersecurity Engineer</li>
+                        <li>Penetration Tester (Ethical Hacker)</li>
+                        <li>Security Architect</li>
+                        <li>Incident Responder</li>
+                        <li>Cryptographer</li>
+                        <li>Forensic Analyst</li>
+                        <li>Malware Analyst</li>
+                        <li>Security Consultant</li>
+                        <li>Compliance Officer</li>
+                    </ul>
+                </div>
 
-        <div class="category">7. Artificial Intelligence (AI) & Machine Learning (ML)</div>
-        <ul>
-            <li class="career-item">AI Research Scientist</li>
-            <li class="career-item">AI Engineer</li>
-            <li class="career-item">ML Engineer</li>
-            <li class="career-item">Robotics Engineer</li>
-            <li class="career-item">Speech Recognition Engineer</li>
-            <li class="career-item">Computer Vision Engineer</li>
-            <li class="career-item">AI Ethics Specialist</li>
-        </ul>
+                <div class="career-group">
+                    <h3>Data Science, Analytics, & AI</h3>
+                    <ul class="career-list">
+                        <li>Data Scientist</li>
+                        <li>Data Analyst</li>
+                        <li>Data Engineer</li>
+                        <li>Business Intelligence (BI) Developer</li>
+                        <li>Machine Learning Engineer</li>
+                        <li>AI/ML Researcher</li>
+                        <li>Deep Learning Engineer</li>
+                        <li>Natural Language Processing (NLP) Engineer</li>
+                        <li>Big Data Engineer</li>
+                        <li>AI Software Engineer</li>
+                    </ul>
+                </div>
 
-        <div class="category">8. Project Management & IT Consultancy</div>
-        <ul>
-            <li class="career-item">Project Manager (IT)</li>
-            <li class="career-item">Scrum Master</li>
-            <li class="career-item">IT Consultant</li>
-            <li class="career-item">Business Analyst</li>
-            <li class="career-item">IT Risk Manager</li>
-            <li class="career-item">Product Manager (IT)</li>
-            <li class="career-item">ERP Consultant</li>
-            <li class="career-item">Systems Integrator</li>
-        </ul>
+                <div class="career-group">
+                    <h3>Web Development & Design</h3>
+                    <ul class="career-list">
+                        <li>Web Developer</li>
+                        <li>UI/UX Designer</li>
+                        <li>Web Application Developer</li>
+                        <li>Web Designer</li>
+                        <li>E-commerce Developer</li>
+                        <li>Web Content Manager</li>
+                    </ul>
+                </div>
 
-        <div class="category">9. Blockchain & Cryptocurrency</div>
-        <ul>
-            <li class="career-item">Blockchain Developer</li>
-            <li class="career-item">Blockchain Architect</li>
-            <li class="career-item">Blockchain Consultant</li>
-            <li class="career-item">Smart Contract Developer</li>
-            <li class="career-item">Cryptocurrency Analyst</li>
-            <li class="career-item">Crypto Trader</li>
-            <li class="career-item">Blockchain Security Expert</li>
-        </ul>
+                <div class="career-group">
+                    <h3>Cloud Computing</h3>
+                    <ul class="career-list">
+                        <li>Cloud Engineer</li>
+                        <li>Cloud Consultant</li>
+                        <li>Cloud Solutions Architect</li>
+                        <li>Cloud Support Engineer</li>
+                        <li>Cloud Security Engineer</li>
+                        <li>Cloud Developer</li>
+                    </ul>
+                </div>
 
-        <div class="category">10. IT Management</div>
-        <ul>
-            <li class="career-item">Chief Information Officer (CIO)</li>
-            <li class="career-item">IT Director</li>
-            <li class="career-item">IT Manager</li>
-            <li class="career-item">Network Operations Center (NOC) Manager</li>
-            <li class="career-item">IT Support Manager</li>
-            <li class="career-item">Helpdesk Support Specialist</li>
-            <li class="career-item">System Support Engineer</li>
-        </ul>
+                <div class="career-group">
+                    <h3>Artificial Intelligence (AI) & Machine Learning (ML)</h3>
+                    <ul class="career-list">
+                        <li>AI Research Scientist</li>
+                        <li>AI Engineer</li>
+                        <li>ML Engineer</li>
+                        <li>Robotics Engineer</li>
+                        <li>Speech Recognition Engineer</li>
+                        <li>Computer Vision Engineer</li>
+                        <li>AI Ethics Specialist</li>
+                    </ul>
+                </div>
 
-        <div class="category">11. IT Sales & Marketing</div>
-        <ul>
-            <li class="career-item">IT Sales Executive</li>
-            <li class="career-item">Pre-sales Engineer</li>
-            <li class="career-item">Account Manager (IT)</li>
-            <li class="career-item">Business Development Manager (IT)</li>
-            <li class="career-item">IT Marketing Specialist</li>
-            <li class="career-item">Channel Sales Manager</li>
-        </ul>
+                <div class="career-group">
+                    <h3>Project Management & IT Consultancy</h3>
+                    <ul class="career-list">
+                        <li>Project Manager (IT)</li>
+                        <li>Scrum Master</li>
+                        <li>IT Consultant</li>
+                        <li>Business Analyst</li>
+                        <li>IT Risk Manager</li>
+                        <li>Product Manager (IT)</li>
+                        <li>ERP Consultant</li>
+                        <li>Systems Integrator</li>
+                    </ul>
+                </div>
 
-        <div class="category">Emerging Specializations (Missed Roles)</div>
-        <ul>
-            <li class="career-item">IoT Developer</li>
-            <li class="career-item">Edge Computing Engineer</li>
-            <li class="career-item">Robotic Process Automation (RPA) Developer</li>
-            <li class="career-item">5G Network Engineer</li>
-            <li class="career-item">Quantum Computing Engineer</li>
-            <li class="career-item">Augmented Reality/Virtual Reality (AR/VR) Developer</li>
-        </ul>
+                <div class="career-group">
+                    <h3>Blockchain & Cryptocurrency</h3>
+                    <ul class="career-list">
+                        <li>Blockchain Developer</li>
+                        <li>Blockchain Architect</li>
+                        <li>Blockchain Consultant</li>
+                        <li>Smart Contract Developer</li>
+                        <li>Cryptocurrency Analyst</li>
+                        <li>Crypto Trader</li>
+                        <li>Blockchain Security Expert</li>
+                    </ul>
+                </div>
+
+                <div class="career-group">
+                    <h3>IT Management</h3>
+                    <ul class="career-list">
+                        <li>Chief Information Officer (CIO)</li>
+                        <li>IT Director</li>
+                        <li>IT Manager</li>
+                        <li>Network Operations Center (NOC) Manager</li>
+                        <li>IT Support Manager</li>
+                        <li>Helpdesk Support Specialist</li>
+                        <li>System Support Engineer</li>
+                    </ul>
+                </div>
+
+                <div class="career-group">
+                    <h3>IT Sales & Marketing</h3>
+                    <ul class="career-list">
+                        <li>IT Sales Executive</li>
+                        <li>Pre-sales Engineer</li>
+                        <li>Account Manager (IT)</li>
+                        <li>Business Development Manager (IT)</li>
+                        <li>IT Marketing Specialist</li>
+                        <li>Channel Sales Manager</li>
+                    </ul>
+                </div>
+
+                <div class="career-group">
+                    <h3>Emerging Specializations</h3>
+                    <ul class="career-list">
+                        <li>IoT Developer</li>
+                        <li>Edge Computing Engineer</li>
+                        <li>Robotic Process Automation (RPA) Developer</li>
+                        <li>5G Network Engineer</li>
+                        <li>Quantum Computing Engineer</li>
+                        <li>Augmented Reality/Virtual Reality (AR/VR) Developer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
+    <footer>
+        <p>&copy; 2025 Career Roadmap. All rights reserved.</p>
+    </footer>
+    <button id="goToTop" onclick="scrollToTop()">↑</button>
+</div>
 </body>
 </html>

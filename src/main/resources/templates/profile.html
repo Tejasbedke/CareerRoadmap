@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Career Roadmap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .profile-sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        #profilepic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: block;
+            background: #eee;
+            object-fit: cover;
+        }
+
+        .profile-menu {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .profile-menu-item {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .profile-menu-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .profile-menu-item.active {
+            background-color: #e1f0fa;
+            color: #3498db;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            display: none;
+            margin-bottom: 2rem;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #e1f0fa;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .remove-skill {
+            cursor: pointer;
+            color: #e74c3c;
+        }
+
+        .button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background: #2980b9;
+        }
+
+        .button.danger {
+            background: #e74c3c;
+        }
+
+        .button.danger:hover {
+            background: #c0392b;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .notification-item {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .badge {
+            background: #e74c3c;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .achievement-card {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <h1>My Profile</h1>
+        <p>Manage your account and settings</p>
+    </div>
+</header>
+
+<main class="container">
+    <div class="profile-grid">
+        <aside class="profile-sidebar">
+            <svg fill="#000000" viewBox="0 0 512 512" id="profilepic" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M256,0C114.615,0,0,114.615,0,256s114.615,256,256,256s256-114.615,256-256S397.385,0,256,0z M256,90 c37.02,0,67.031,35.468,67.031,79.219S293.02,248.438,256,248.438s-67.031-35.468-67.031-79.219S218.98,90,256,90z M369.46,402 H142.54c-11.378,0-20.602-9.224-20.602-20.602C121.938,328.159,181.959,285,256,285s134.062,43.159,134.062,96.398 C390.062,392.776,380.839,402,369.46,402z"></path></g></svg>
+
+            <h2>John Doe</h2>
+            <p>Software Developer</p>
+
+            <ul class="profile-menu">
+                <li class="profile-menu-item active" data-section="personal">Personal Information</li>
+                <li class="profile-menu-item" data-section="security">Security Settings</li>
+                <li class="profile-menu-item" data-section="skills">Skills & Expertise</li>
+                <li class="profile-menu-item" data-section="notifications">Notifications</li>
+                <li class="profile-menu-item" data-section="achievements">Achievements</li>
+                <li class="profile-menu-item" data-section="education">Education</li>
+                <li class="profile-menu-item" data-section="privacy">Privacy Settings</li>
+                <li class="profile-menu-item" data-section="recommendations">Recommendations</li>
+            </ul>
+        </aside>
+
+        <div class="main-content">
+            <!-- Personal Information Section -->
+            <section class="section active" id="personal">
+                <h2>Personal Information</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" value="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" value="john.doe@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="text" id="phone" value="+1 (555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" rows="4">Passionate software developer with 5 years of experience in web development.</textarea>
+                    </div>
+                    <button type="submit" class="button">Save Changes</button>
+                </form>
+            </section>
+
+            <!-- Security Settings Section -->
+            <section class="section" id="security">
+                <h2>Security Settings</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="current-password">Current Password</label>
+                        <input type="password" id="current-password">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm New Password</label>
+                        <input type="password" id="confirm-password">
+                    </div>
+                    <button type="submit" class="button">Update Password</button>
+                </form>
+
+                <div style="margin-top: 2rem;">
+                    <h3>Two-Factor Authentication</h3>
+                    <p>Enhance your account security with 2FA</p>
+                    <button class="button" style="margin-top: 1rem;">Enable 2FA</button>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="section" id="skills">
+                <h2>Skills & Expertise</h2>
+                <div class="form-group">
+                    <label for="add-skill">Add New Skill</label>
+                    <div style="display: flex; gap: 1rem;">
+                        <input type="text" id="add-skill" placeholder="Enter skill name">
+                        <button class="button">Add</button>
+                    </div>
+                </div>
+
+                <div class="skill-tags">
+                    <div class="skill-tag">
+                        HTML5 <span class="remove-skill">×</span>
+                    </div>
+                    <div class="skill-tag">
+                        CSS3 <span class="remove-skill">×</span>
+                    </div>
+                    <div class="skill-tag">
+                        JavaScript <span class="remove-skill">×</span>
+                    </div>
+                    <div class="skill-tag">
+                        React <span class="remove-skill">×</span>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">15</div>
+                        <div>Skills Added</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">8</div>
+                        <div>Endorsed Skills</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4</div>
+                        <div>Top Skills</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notifications Section -->
+            <section class="section" id="notifications">
+                <h2>Notifications</h2>
+                <div class="notification-item">
+                    <div>
+                        <h3>Email Notifications</h3>
+                        <p>Receive updates about your progress</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                    </label>
+                </div>
+                <div class="notification-item">
+                    <div>
+                        <h3>Push Notifications</h3>
+                        <p>Get real-time alerts</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox">
+                    </label>
+                </div>
+            </section>
+
+            <!-- Achievements Section -->
+            <section class="section" id="achievements">
+                <h2>Achievements</h2>
+                <div class="achievement-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🌟</div>
+                        <h3>Quick Learner</h3>
+                        <p>Completed 5 courses in a month</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🏆</div>
+                        <h3>Skill Master</h3>
+                        <p>Mastered 10 skills</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🎯</div>
+                        <h3>Goal Crusher</h3>
+                        <p>Achieved all quarterly goals</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Privacy Settings Section -->
+            <section class="section" id="privacy">
+                <h2>Privacy Settings</h2>
+                <div class="notification-item">
+                    <div>
+                        <h3>Profile Visibility</h3>
+                        <p>Control who can see your profile</p>
+                    </div>
+                    <select>
+                        <option>Public</option>
+                        <option>Private</option>
+                        <option>Connections Only</option>
+                    </select>
+                </div>
+                <div class="notification-item">
+                    <div>
+                        <h3>Activity Status</h3>
+                        <p>Show when you're online</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                    </label>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<script>
+    // Handle menu item clicks
+    document.querySelectorAll('.profile-menu-item').forEach(item => {
+        item.addEventListener('click', () => {
+            // Remove active class from all menu items and sections
+            document.querySelectorAll('.profile-menu-item').forEach(i => i.classList.remove('active'));
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+
+            // Add active class to clicked item and corresponding section
+            item.classList.add('active');
+            document.getElementById(item.dataset.section).classList.add('active');
+        });
+    });
+
+    // Handle skill removal
+    document.querySelectorAll('.remove-skill').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.target.parentElement.remove();
+        });
+    });
+</script>
+</body>
+</html>

@@ -264,7 +264,6 @@ body, html {
   }
 }
 
-/* Add this to your existing CSS file */
 
 .home-btn {
   position: fixed;
@@ -301,4 +300,63 @@ body, html {
     padding: 0 15px;
     font-size: 14px;
   }
+}
+/* Verification Page Specific Styles */
+.verification-card {
+  max-width: 500px;
+  text-align: center;
+}
+
+.verification-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.verification-inputs input {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 24px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.verification-inputs input:focus {
+  border-color: #a64bf4;
+  outline: none;
+}
+
+.resend-section {
+  margin-top: 20px;
+}
+
+.resend-section a {
+  color: #a64bf4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.name-group {
+  display: flex;
+  gap: 10px;
+}
+
+.name-group input {
+  flex: 1;
 }

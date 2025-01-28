@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Roadmap Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<div class="dashboard-container">
+    <aside class="sidebar">
+        <div class="logo">
+            <img class="crlogo" src="images/cr_logo.jpg" alt="Career Roadmap Logo">
+            <h2>Admin Dashboard</h2>
+        </div>
+        <nav>
+            <ul>
+                <li class="active" data-section="dashboard">
+                    <i class="fas fa-home"></i> Dashboard
+                </li>
+                <li data-section="roadmaps">
+                    <i class="fas fa-map-marked-alt"></i> Roadmaps
+                </li>
+                <li data-section="career-options">
+                    <i class="fas fa-briefcase"></i> Career Options
+                </li>
+                <li data-section="users">
+                    <i class="fas fa-users"></i> User Management
+                </li>
+                <li data-section="feedback">
+                    <i class="fas fa-comment-dots"></i> User Feedback
+                </li>
+                <li data-section="fields">
+                    <i class="fas fa-graduation-cap"></i> Academic Fields
+                </li>
+                <li data-section="analytics">
+                    <i class="fas fa-chart-pie"></i> Analytics
+                </li>
+                <li data-section="settings">
+                    <i class="fas fa-cog"></i> Settings
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="user-profile">
+                <svg class="adminlogo" fill="#000000" height="200px" width="200px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="user-admin"> <path d="M22.3,16.7l1.4-1.4L20,11.6l-5.8,5.8c-0.5-0.3-1.1-0.4-1.7-0.4C10.6,17,9,18.6,9,20.5s1.6,3.5,3.5,3.5s3.5-1.6,3.5-3.5 c0-0.6-0.2-1.2-0.4-1.7l1.9-1.9l2.3,2.3l1.4-1.4l-2.3-2.3l1.1-1.1L22.3,16.7z M12.5,22c-0.8,0-1.5-0.7-1.5-1.5s0.7-1.5,1.5-1.5 s1.5,0.7,1.5,1.5S13.3,22,12.5,22z"></path> <path d="M2,19c0-3.9,3.1-7,7-7c2,0,3.9,0.9,5.3,2.4l1.5-1.3c-0.9-1-1.9-1.8-3.1-2.3C14.1,9.7,15,7.9,15,6c0-3.3-2.7-6-6-6 S3,2.7,3,6c0,1.9,0.9,3.7,2.4,4.8C2.2,12.2,0,15.3,0,19v5h8v-2H2V19z M5,6c0-2.2,1.8-4,4-4s4,1.8,4,4s-1.8,4-4,4S5,8.2,5,6z"></path> </g> </g></svg>
+                <span>Admin Name</span>
+                <button class="logout-btn">Logout</button>
+            </div>
+        </header>
+
+        <section id="dashboard" class="active-section">
+            <h1>Dashboard Overview</h1>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Total Users</h3>
+                    <p id="total-users">1,254</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Active Roadmaps</h3>
+                    <p id="total-roadmaps">42</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-comment-dots"></i>
+                    <h3>Unread Feedback</h3>
+                    <p id="unread-feedback">15</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmaps" class="section">
+            <h1>Roadmap Management</h1>
+            <div class="action-buttons">
+                <button class="btn-primary" id="add-roadmap-btn">
+                    <i class="fas fa-plus"></i> Add New Roadmap
+                </button>
+            </div>
+            <div class="table-container">
+                <table id="roadmaps-table">
+                    <thead>
+                    <tr>
+                        <th>Roadmap Name</th>
+                        <th>Field</th>
+                        <th>Complexity</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Roadmap entries will be dynamically populated -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Similar structured sections for other management areas -->
+    </main>
+
+    <!-- Modal for adding/editing roadmaps -->
+    <div id="roadmap-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Roadmap</h2>
+            <form id="roadmap-form">
+                <input type="text" placeholder="Roadmap Name" required>
+                <select required>
+                    <option value="">Select Academic Field</option>
+                    <!-- Dynamic field options -->
+                </select>
+                <textarea placeholder="Roadmap Description"></textarea>
+                <button type="submit">Save Roadmap</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="scripts/admin.js" defer></script>
+</body>
+</html>

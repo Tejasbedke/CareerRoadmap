@@ -2,342 +2,362 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engineering Career Paths</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/careeroptions.css">
+    <script src="scripts/test.js" defer></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background: #f0f2f5;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .intro {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .engineering-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .field-card {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .field-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .field-card h2 {
-            color: #1e3c72;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #e0e0e0;
-        }
-
-        .specialization-list {
-            list-style: none;
-        }
-
-        .specialization-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .specialization-list li:last-child {
-            border-bottom: none;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-            background: #1e3c72;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .field-card {
-                margin-bottom: 1rem;
-            }
+        .career-category{
+            display: inline-block;
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Engineering Career Paths</h1>
-        <p>Comprehensive Guide to Engineering Specializations</p>
-    </header>
+<body> <div id="menu"></div>
+<div class="bgimage" style="background-image: url('/images/bg-01.jpg');">
+    <!-- Header with Menu and Login/Signup buttons -->
 
-    <div class="container">
-        <div class="intro">
-            <p>Discover the vast world of engineering opportunities across various disciplines and specializations.</p>
+
+    <div id="divv" class="container">
+        <div class="top-nav">
+            <div class="nav-links">
+                <a href="#mechanical" class="nav-link">Mechanical Engineering</a>
+                <a href="#electrical" class="nav-link">Electrical Engineering</a>
+                <a href="#computer" class="nav-link">Computer Engineering </a>
+                <a href="#civil" class="nav-link">Civil Engineering</a>
+                <a href="#chemical" class="nav-link">Chemical Engineering</a>
+                <a href="#biochemical" class="nav-link">Biomedical Engineering</a>
+                <a href="#marine" class="nav-link">Marine Engineering</a>
+                <a href="#nuclear" class="nav-link">Nuclear Engineering</a>
+                <a href="#acoustical" class="nav-link">Acoustical Engineering</a>
+                <a href="#optical" class="nav-link">Optical Engineering</a>
+                <a href="#emerging" class="nav-link">Emerging Technologies</a>
+                <a href="#industrial" class="nav-link">Industrial Engineering</a>
+                <a href="#naval" class="nav-link">Naval Engineering</a>
+                <a href="#geomatics" class="nav-link">Geomatics/Surveying Engineering</a>
+                <a href="#mining" class="nav-link">Mining Engineering</a>
+                <a href="#textile" class="nav-link">Textile Engineering</a>
+                <a href="#packaging" class="nav-link">Packaging Engineering</a>
+                <a href="#fire" class="nav-link">Fire Protection Engineering</a>
+
+            </div>
+        </div>
+        <h1>Engineering Career Paths</h1>
+
+        <div id="mechanical" class="career-category">
+            <h2>Mechanical Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Mechanical Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <a href="#"><li>Automotive Design Engineer</li></a>
+                        <li>Aerospace Engineer</li>
+                        <li>HVAC Engineer</li>
+                        <li>Robotics Engineer</li>
+                        <li>Manufacturing Engineer</li>
+                        <li>Product Design Engineer</li>
+                        <li>Energy Systems Engineer</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <div class="engineering-grid">
-            <div class="field-card">
-                <h2>Mechanical Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Automotive Design Engineer</li>
-                    <li>Aerospace Engineer</li>
-                    <li>HVAC Engineer</li>
-                    <li>Robotics Engineer</li>
-                    <li>Manufacturing Engineer</li>
-                    <li>Product Design Engineer</li>
-                    <li>Energy Systems Engineer</li>
-                </ul>
+        <div id="electrical" class="career-category">
+            <h2>Electrical Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Electrical Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Power Systems Engineer</li>
+                        <li>Electronics Engineer</li>
+                        <li>Control Systems Engineer</li>
+                        <li>Telecommunications Engineer</li>
+                        <li>RF Engineer</li>
+                        <li>Embedded Systems Engineer</li>
+                        <li>Microelectronics Engineer</li>
+                    </ul>
+                </div>
             </div>
+        </div>
 
-            <div class="field-card">
-                <h2>Electrical Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Power Systems Engineer</li>
-                    <li>Electronics Engineer</li>
-                    <li>Control Systems Engineer</li>
-                    <li>Telecommunications Engineer</li>
-                    <li>RF Engineer</li>
-                    <li>Embedded Systems Engineer</li>
-                    <li>Microelectronics Engineer</li>
-                </ul>
+        <div id="computer" class="career-category">
+            <h2>Computer Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Computer Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Software Developer</li>
+                        <li>DevOps Engineer</li>
+                        <li>Cloud Engineer</li>
+                        <li>Machine Learning Engineer</li>
+                        <li>Cybersecurity Engineer</li>
+                        <li>Full-Stack Developer</li>
+                        <li>Mobile App Developer</li>
+                    </ul>
+                </div>
             </div>
+        </div>
 
-            <div class="field-card">
-                <h2>Computer Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Software Developer</li>
-                    <li>DevOps Engineer</li>
-                    <li>Cloud Engineer</li>
-                    <li>Machine Learning Engineer</li>
-                    <li>Cybersecurity Engineer</li>
-                    <li>Full-Stack Developer</li>
-                    <li>Mobile App Developer</li>
-                </ul>
+        <div id="civil" class="career-category">
+            <h2>Civil Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Civil Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Structural Engineer</li>
+                        <li>Transportation Engineer</li>
+                        <li>Geotechnical Engineer</li>
+                        <li>Environmental Engineer</li>
+                        <li>Water Resources Engineer</li>
+                        <li>Construction Engineer</li>
+                        <li>Urban Planning Engineer</li>
+                    </ul>
+                </div>
             </div>
+        </div>
 
-            <div class="field-card">
-                <h2>Civil Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Structural Engineer</li>
-                    <li>Transportation Engineer</li>
-                    <li>Geotechnical Engineer</li>
-                    <li>Environmental Engineer</li>
-                    <li>Water Resources Engineer</li>
-                    <li>Construction Engineer</li>
-                    <li>Urban Planning Engineer</li>
-                </ul>
+        <div id="chemical" class="career-category">
+            <h2>Chemical Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Chemical Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Process Engineer</li>
+                        <li>Petroleum Engineer</li>
+                        <li>Biochemical Engineer</li>
+                        <li>Materials Engineer</li>
+                        <li>Food Processing Engineer</li>
+                        <li>Pharmaceutical Engineer</li>
+                        <li>Environmental Protection Engineer</li>
+                    </ul>
+                </div>
             </div>
+        </div>
 
-            <div class="field-card">
-                <h2>Chemical Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Process Engineer</li>
-                    <li>Petroleum Engineer</li>
-                    <li>Biochemical Engineer</li>
-                    <li>Materials Engineer</li>
-                    <li>Food Processing Engineer</li>
-                    <li>Pharmaceutical Engineer</li>
-                    <li>Environmental Protection Engineer</li>
-                </ul>
+        <div id="biomedical" class="career-category">
+            <h2>Biomedical Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Biomedical Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Medical Device Engineer</li>
+                        <li>Tissue Engineer</li>
+                        <li>Clinical Engineer</li>
+                        <li>Rehabilitation Engineer</li>
+                        <li>Biomechanics Engineer</li>
+                        <li>Bioinformatics Engineer</li>
+                    </ul>
+                </div>
             </div>
+        </div>
 
-            <div class="field-card">
-                <h2>Biomedical Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Medical Device Engineer</li>
-                    <li>Tissue Engineer</li>
-                    <li>Clinical Engineer</li>
-                    <li>Rehabilitation Engineer</li>
-                    <li>Biomechanics Engineer</li>
-                    <li>Bioinformatics Engineer</li>
-                </ul>
+        <div id="marine" class="career-category">
+            <h2>Marine Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Marine Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Ship Design Engineer</li>
+                        <li>Offshore Platform Engineer</li>
+                        <li>Marine Systems Engineer</li>
+                        <li>Port Infrastructure Engineer</li>
+                        <li>Submarine Systems Engineer</li>
+                        <li>Maritime Equipment Engineer</li>
+                    </ul>
+                </div>
             </div>
+        </div>
 
-            <div class="field-card">
-                <h2>Marine Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Ship Design Engineer</li>
-                    <li>Offshore Platform Engineer</li>
-                    <li>Marine Systems Engineer</li>
-                    <li>Port Infrastructure Engineer</li>
-                    <li>Submarine Systems Engineer</li>
-                    <li>Maritime Equipment Engineer</li>
-                </ul>
+        <div id="nuclear" class="career-category">
+            <h2>Nuclear Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Nuclear Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Reactor Design Engineer</li>
+                        <li>Nuclear Safety Engineer</li>
+                        <li>Radiation Protection Engineer</li>
+                        <li>Nuclear Materials Engineer</li>
+                        <li>Fusion Research Engineer</li>
+                        <li>Nuclear Waste Management Engineer</li>
+                    </ul>
+                </div>
             </div>
+        </div>
 
-            <div class="field-card">
-                <h2>Nuclear Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Reactor Design Engineer</li>
-                    <li>Nuclear Safety Engineer</li>
-                    <li>Radiation Protection Engineer</li>
-                    <li>Nuclear Materials Engineer</li>
-                    <li>Fusion Research Engineer</li>
-                    <li>Nuclear Waste Management Engineer</li>
-                </ul>
+        <div id="acoustical" class="career-category">
+            <h2>Acoustical Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Acoustical Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Audio Systems Engineer</li>
+                        <li>Noise Control Engineer</li>
+                        <li>Architectural Acoustics Engineer</li>
+                        <li>Musical Instrument Design Engineer</li>
+                        <li>Underwater Acoustics Engineer</li>
+                        <li>Psychoacoustics Engineer</li>
+                    </ul>
+                </div>
             </div>
+        </div>
 
-            <div class="field-card">
-                <h2>Acoustical Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Audio Systems Engineer</li>
-                    <li>Noise Control Engineer</li>
-                    <li>Architectural Acoustics Engineer</li>
-                    <li>Musical Instrument Design Engineer</li>
-                    <li>Underwater Acoustics Engineer</li>
-                    <li>Psychoacoustics Engineer</li>
-                </ul>
+        <div id="optical" class="career-category">
+            <h2>Optical Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Optical Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Laser Systems Engineer</li>
+                        <li>Optical Communications Engineer</li>
+                        <li>Display Technology Engineer</li>
+                        <li>Photonics Engineer</li>
+                        <li>Optical Instrument Designer</li>
+                        <li>Fiber Optics Engineer</li>
+                    </ul>
+                </div>
             </div>
+        </div>
 
-            <div class="field-card">
-                <h2>Optical Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Laser Systems Engineer</li>
-                    <li>Optical Communications Engineer</li>
-                    <li>Display Technology Engineer</li>
-                    <li>Photonics Engineer</li>
-                    <li>Optical Instrument Designer</li>
-                    <li>Fiber Optics Engineer</li>
-                </ul>
+        <div id="emerging" class="career-category">
+            <h2>Emerging Technologies</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Emerging Technologies Professionals</h3>
+                    <ul class="career-list">
+                        <li>Quantum Engineering</li>
+                        <li>Nanoengineering</li>
+                        <li>Sustainable Energy Engineer</li>
+                        <li>Space Systems Engineer</li>
+                        <li>Biomimicry Engineer</li>
+                        <li>IoT Engineer</li>
+                    </ul>
+                </div>
             </div>
+        </div>
 
-            <div class="field-card">
-                <h2>Emerging Technologies</h2>
-                <ul class="specialization-list">
-                    <li>Quantum Engineering</li>
-                    <li>Nanoengineering</li>
-                    <li>Sustainable Energy Engineer</li>
-                    <li>Space Systems Engineer</li>
-                    <li>Biomimicry Engineer</li>
-                    <li>IoT Engineer</li>
-                </ul>
+        <div id="industrial" class="career-category">
+            <h2>Industrial Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Industrial Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Quality Engineer</li>
+                        <li>Supply Chain Engineer</li>
+                        <li>Operations Research Engineer</li>
+                        <li>Safety Engineer</li>
+                        <li>Systems Engineer</li>
+                        <li>Ergonomics Engineer</li>
+                    </ul>
+                </div>
             </div>
+        </div>
 
-            <div class="field-card">
-                <h2>Industrial Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Quality Engineer</li>
-                    <li>Supply Chain Engineer</li>
-                    <li>Operations Research Engineer</li>
-                    <li>Safety Engineer</li>
-                    <li>Systems Engineer</li>
-                    <li>Ergonomics Engineer</li>
-                </ul>
+        <div id="marine-naval" class="career-category">
+            <h2>Marine/Naval Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Marine/Naval Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Ship Design Engineer</li>
+                        <li>Offshore Platform Engineer</li>
+                        <li>Marine Systems Engineer</li>
+                        <li>Port Infrastructure Engineer</li>
+                        <li>Submarine Systems Engineer</li>
+                        <li>Maritime Equipment Engineer</li>
+                    </ul>
+                </div>
             </div>
-            <div class="field-card">
-                <h2>Marine/Naval Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Ship Design Engineer</li>
-                    <li>Offshore Platform Engineer</li>
-                    <li>Marine Systems Engineer</li>
-                    <li>Port Infrastructure Engineer</li>
-                    <li>Submarine Systems Engineer</li>
-                    <li>Maritime Equipment Engineer</li>
-                </ul>
-            </div>
-            <div class="field-card">
-                <h2>Geomatics/Surveying Engineering</h2>
-                <ul class="specialization-list">
-                    <li>GIS Engineer</li>
-                    <li>Remote Sensing Engineer</li>
-                    <li>Photogrammetry Engineer</li>
-                    <li>Geodetic Engineer</li>
-                    <li>Cartographic Engineer</li>
-                    <li>Land Information Systems Engineer</li>
-                </ul>
-            </div>
+        </div>
 
-            <div class="field-card">
-                <h2>Mining Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Mine Design Engineer</li>
-                    <li>Mineral Processing Engineer</li>
-                    <li>Rock Mechanics Engineer</li>
-                    <li>Ventilation Engineer</li>
-                    <li>Explosives Engineer</li>
-                    <li>Mine Safety Engineer</li>
-                </ul>
+        <div id="geomatics" class="career-category">
+            <h2>Geomatics/Surveying Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Geomatics/Surveying Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>GIS Engineer</li>
+                        <li>Remote Sensing Engineer</li>
+                        <li>Photogrammetry Engineer</li>
+                        <li>Geodetic Engineer</li>
+                        <li>Cartographic Engineer</li>
+                        <li>Land Information Systems Engineer</li>
+                    </ul>
+                </div>
             </div>
-            <div class="field-card">
-                <h2>Textile Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Fiber Production Engineer</li>
-                    <li>Fabric Development Engineer</li>
-                    <li>Technical Textile Engineer</li>
-                    <li>Textile Processing Engineer</li>
-                    <li>Textile Quality Engineer</li>
-                    <li>Textile Machinery Engineer</li>
-                </ul>
-            </div>
+        </div>
 
-            <div class="field-card">
-                <h2>Packaging Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Package Design Engineer</li>
-                    <li>Food Packaging Engineer</li>
-                    <li>Medical Packaging Engineer</li>
-                    <li>Sustainable Packaging Engineer</li>
-                    <li>Package Testing Engineer</li>
-                    <li>Manufacturing Packaging Engineer</li>
-                </ul>
+        <div id="mining" class="career-category">
+            <h2>Mining Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Mining Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Mine Design Engineer</li>
+                        <li>Mineral Processing Engineer</li>
+                        <li>Rock Mechanics Engineer</li>
+                        <li>Ventilation Engineer</li>
+                        <li>Explosives Engineer</li>
+                        <li>Mine Safety Engineer</li>
+                    </ul>
+                </div>
             </div>
+        </div>
 
-            <div class="field-card">
-                <h2>Fire Protection Engineering</h2>
-                <ul class="specialization-list">
-                    <li>Fire Safety Systems Engineer</li>
-                    <li>Fire Prevention Engineer</li>
-                    <li>Fire Detection Systems Engineer</li>
-                    <li>Smoke Control Engineer</li>
-                    <li>Emergency Systems Engineer</li>
-                    <li>Building Code Compliance Engineer</li>
-                </ul>
+        <div id="textile" class="career-category">
+            <h2>Textile Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Textile Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Fiber Production Engineer</li>
+                        <li>Fabric Development Engineer</li>
+                        <li>Technical Textile Engineer</li>
+                        <li>Textile Processing Engineer</li>
+                        <li>Textile Quality Engineer</li>
+                        <li>Textile Machinery Engineer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="packaging" class="career-category">
+            <h2>Packaging Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Packaging Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Package Design Engineer</li>
+                        <li>Food Packaging Engineer</li>
+                        <li>Medical Packaging Engineer</li>
+                        <li>Sustainable Packaging Engineer</li>
+                        <li>Package Testing Engineer</li>
+                        <li>Manufacturing Packaging Engineer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="fire" class="career-category">
+            <h2>Fire Protection Engineering</h2>
+            <div class="career-list">
+                <div class="career-group">
+                    <h3>Fire Protection Engineering Professionals</h3>
+                    <ul class="career-list">
+                        <li>Fire Safety Systems Engineer</li>
+                        <li>Fire Prevention Engineer</li>
+                        <li>Fire Detection Systems Engineer</li>
+                        <li>Smoke Control Engineer</li>
+                        <li>Emergency Systems Engineer</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-      
     <footer>
-        <p>Explore these engineering paths to find your perfect career match!</p>
+        <p>&copy; 2025 Career Roadmap. All rights reserved.</p>
     </footer>
+    <button id="goToTop" onclick="scrollToTop()">↑</button>
+</div>
 </body>
 </html>

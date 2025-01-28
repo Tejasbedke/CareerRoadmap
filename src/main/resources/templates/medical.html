@@ -4,177 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complete Healthcare Career Paths</title>
-    <style>
-        :root {
-            --primary-color: #2c5282;
-            --secondary-color: #4299e1;
-            --hover-color: #ebf8ff;
-            --border-color: #e2e8f0;
-            --text-color: #2d3748;
-            --section-bg: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #f7fafc;
-            padding: 2rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-        }
-
-        h1 {
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-            border-bottom: 3px solid var(--border-color);
-            padding-bottom: 1rem;
-        }
-
-        .career-category {
-            margin-bottom: 2.5rem;
-            background: var(--section-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .career-category:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
-
-        h3 {
-            color: var(--secondary-color);
-            margin: 1rem 0;
-            font-size: 1.3rem;
-        }
-
-        .career-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            padding: 0.5rem;
-        }
-
-        .career-group {
-            background: var(--hover-color);
-            padding: 1rem;
-            border-radius: 6px;
-        }
-
-        .career-item {
-            list-style-type: none;
-            padding: 0.4rem 0.4rem 0.4rem 1rem;
-            position: relative;
-        }
-
-        .career-item::before {
-            content: "•";
-            color: var(--secondary-color);
-            position: absolute;
-            left: 0;
-        }
-
-        .requirements {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            margin-top: 2rem;
-            border-radius: 6px;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .requirements h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .requirements ul {
-            list-style-type: none;
-            padding-left: 1rem;
-        }
-
-        .top-nav {
-            background: var(--primary-color);
-            padding: 1rem;
-            margin: -2rem -2rem 2rem -2rem;
-            border-radius: 12px 12px 0 0;
-            color: white;
-        }
-
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .nav-link:hover {
-            background-color: var(--secondary-color);
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
-
-            .container {
-                padding: 1rem;
-            }
-
-            .career-list {
-                grid-template-columns: 1fr;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/careeroptions.css">
+    <script src="scripts/test.js" defer></script>
 </head>
-<body>
-    <div class="container">
+<body> <div id="menu"></div>
+<div class="bgimage" style="background-image: url('/images/bg-01.jpg');">    <!-- Header with Menu and Login/Signup buttons -->
+
+
+
+    <body>
+    <div id="divv" class="container">
         <div class="top-nav">
             <div class="nav-links">
                 <a href="#doctors" class="nav-link">Medical Doctors</a>
@@ -193,181 +33,399 @@
                 <div class="career-group">
                     <h3>Primary Care</h3>
                     <ul>
-                        <li class="career-item">Family Medicine Physician</li>
-                        <li class="career-item">Internal Medicine Physician</li>
-                        <li class="career-item">Pediatrician</li>
-                        <li class="career-item">Geriatric Medicine Physician</li>
-                        <li class="career-item">Urgent Care Physician</li>
-                        <li class="career-item">Sports Medicine Physician</li>
+                        <li>Family Medicine Physician</li>
+                        <li>Internal Medicine Physician</li>
+                        <li>Pediatrician</li>
+                        <li>Geriatric Medicine Physician</li>
+                        <li>Urgent Care Physician</li>
+                        <li>Sports Medicine Physician</li>
                     </ul>
                 </div>
 
                 <div class="career-group">
                     <h3>Surgical Specialties</h3>
                     <ul>
-                        <li class="career-item">General Surgeon</li>
-                        <li class="career-item">Orthopedic Surgeon</li>
-                        <li class="career-item">Neurosurgeon</li>
-                        <li class="career-item">Cardiac Surgeon</li>
-                        <li class="career-item">Plastic Surgeon</li>
-                        <li class="career-item">Pediatric Surgeon</li>
-                        <li class="career-item">Vascular Surgeon</li>
-                        <li class="career-item">Transplant Surgeon</li>
-                        <li class="career-item">Trauma Surgeon</li>
-                        <li class="career-item">Colorectal Surgeon</li>
-                        <li class="career-item">Thoracic Surgeon</li>
+                        <li>General Surgeon</li>
+                        <li>Orthopedic Surgeon</li>
+                        <li>Neurosurgeon</li>
+                        <li>Cardiac Surgeon</li>
+                        <li>Plastic Surgeon</li>
+                        <li>Pediatric Surgeon</li>
+                        <li>Vascular Surgeon</li>
+                        <li>Transplant Surgeon</li>
+                        <li>Trauma Surgeon</li>
+                        <li>Colorectal Surgeon</li>
+                        <li>Thoracic Surgeon</li>
                     </ul>
                 </div>
 
                 <div class="career-group">
                     <h3>Medical Specialties</h3>
                     <ul>
-                        <li class="career-item">Cardiologist</li>
-                        <li class="career-item">Neurologist</li>
-                        <li class="career-item">Oncologist</li>
-                        <li class="career-item">Endocrinologist</li>
-                        <li class="career-item">Gastroenterologist</li>
-                        <li class="career-item">Pulmonologist</li>
-                        <li class="career-item">Rheumatologist</li>
-                        <li class="career-item">Dermatologist</li>
-                        <li class="career-item">Allergist/Immunologist</li>
-                        <li class="career-item">Infectious Disease Specialist</li>
-                        <li class="career-item">Hematologist</li>
-                        <li class="career-item">Nephrologist</li>
+                        <li>Cardiologist</li>
+                        <li>Neurologist</li>
+                        <li>Oncologist</li>
+                        <li>Endocrinologist</li>
+                        <li>Gastroenterologist</li>
+                        <li>Pulmonologist</li>
+                        <li>Rheumatologist</li>
+                        <li>Dermatologist</li>
+                        <li>Allergist/Immunologist</li>
+                        <li>Infectious Disease Specialist</li>
+                        <li>Hematologist</li>
+                        <li>Nephrologist</li>
                     </ul>
                 </div>
 
                 <div class="career-group">
                     <h3>Other Medical Specialties</h3>
                     <ul>
-                        <li class="career-item">Psychiatrist</li>
-                        <li class="career-item">Radiologist</li>
-                        <li class="career-item">Anesthesiologist</li>
-                        <li class="career-item">Emergency Medicine Physician</li>
-                        <li class="career-item">Pathologist</li>
-                        <li class="career-item">Physical Medicine & Rehabilitation</li>
-                        <li class="career-item">Ophthalmologist</li>
-                        <li class="career-item">Otolaryngologist (ENT)</li>
-                        <li class="career-item">Obstetrician/Gynecologist</li>
-                        <li class="career-item">Urologist</li>
-                        <li class="career-item">Nuclear Medicine Physician</li>
+                        <li>Psychiatrist</li>
+                        <li>Radiologist</li>
+                        <li>Anesthesiologist</li>
+                        <li>Emergency Medicine Physician</li>
+                        <li>Pathologist</li>
+                        <li>Physical Medicine & Rehabilitation</li>
+                        <li>Ophthalmologist</li>
+                        <li>Otolaryngologist (ENT)</li>
+                        <li>Obstetrician/Gynecologist</li>
+                        <li>Urologist</li>
+                        <li>Nuclear Medicine Physician</li>
                     </ul>
                 </div>
             </div>
-        </div>
+            </dixv>
 
-        <div id="nursing" class="career-category">
-            <h2>Nursing Careers</h2>
-            <div class="career-list">
-                <div class="career-group">
-                    <h3>Registered Nurses (RN) Specializations</h3>
-                    <ul>
-                        <li class="career-item">Critical Care Nurse</li>
-                        <li class="career-item">Emergency Room Nurse</li>
-                        <li class="career-item">Operating Room Nurse</li>
-                        <li class="career-item">Pediatric Nurse</li>
-                        <li class="career-item">Oncology Nurse</li>
-                        <li class="career-item">Labor and Delivery Nurse</li>
-                        <li class="career-item">Psychiatric Nurse</li>
-                        <li class="career-item">Public Health Nurse</li>
-                        <li class="career-item">School Nurse</li>
-                        <li class="career-item">Home Health Nurse</li>
-                    </ul>
-                </div>
+            <div id="nursing" class="career-category">
+                <h2>Nursing Careers</h2>
+                <div class="career-list">
+                    <div class="career-group">
+                        <h3>Registered Nurses (RN) Specializations</h3>
+                        <ul>
+                            <li>Critical Care Nurse</li>
+                            <li>Emergency Room Nurse</li>
+                            <li>Operating Room Nurse</li>
+                            <li>Pediatric Nurse</li>
+                            <li>Oncology Nurse</li>
+                            <li>Labor and Delivery Nurse</li>
+                            <li>Psychiatric Nurse</li>
+                            <li>Public Health Nurse</li>
+                            <li>School Nurse</li>
+                            <li>Home Health Nurse</li>
+                        </ul>
+                    </div>
 
-                <div class="career-group">
-                    <h3>Advanced Practice Registered Nurses</h3>
-                    <ul>
-                        <li class="career-item">Nurse Practitioner</li>
-                        <li class="career-item">Clinical Nurse Specialist</li>
-                        <li class="career-item">Certified Nurse Midwife</li>
-                        <li class="career-item">Certified Registered Nurse Anesthetist</li>
-                        <li class="career-item">Nurse Educator</li>
-                        <li class="career-item">Nurse Administrator</li>
-                    </ul>
-                </div>
+                    <div class="career-group">
+                        <h3>Advanced Practice Registered Nurses</h3>
+                        <ul>
+                            <li>Nurse Practitioner</li>
+                            <li>Clinical Nurse Specialist</li>
+                            <li>Certified Nurse Midwife</li>
+                            <li>Certified Registered Nurse Anesthetist</li>
+                            <li>Nurse Educator</li>
+                            <li>Nurse Administrator</li>
+                        </ul>
+                    </div>
 
-                <div class="career-group">
-                    <h3>Specialized Nursing</h3>
-                    <ul>
-                        <li class="career-item">Flight Nurse</li>
-                        <li class="career-item">Forensic Nurse</li>
-                        <li class="career-item">Military Nurse</li>
-                        <li class="career-item">Research Nurse</li>
-                        <li class="career-item">Informatics Nurse</li>
-                        <li class="career-item">Legal Nurse Consultant</li>
-                        <li class="career-item">Pain Management Nurse</li>
-                        <li class="career-item">Transplant Nurse</li>
-                        <li class="career-item">Wound Care Nurse</li>
-                        <li class="career-item">Infection Control Nurse</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div id="allied" class="career-category">
-            <h2>Allied Health Professions</h2>
-            <div class="career-list">
-                <div class="career-group">
-                    <h3>Therapy Services</h3>
-                    <ul>
-                        <li class="career-item">Physical Therapist</li>
-                        <li class="career-item">Occupational Therapist</li>
-                        <li class="career-item">Speech-Language Pathologist</li>
-                        <li class="career-item">Respiratory Therapist</li>
-                        <li class="career-item">Art Therapist</li>
-                        <li class="career-item">Music Therapist</li>
-                        <li class="career-item">Recreation Therapist</li>
-                        <li class="career-item">Massage Therapist</li>
-                        <li class="career-item">Athletic Trainer</li>
-                    </ul>
-                </div>
-
-                <div class="career-group">
-                    <h3>Diagnostic Services</h3>
-                    <ul>
-                        <li class="career-item">Radiologic Technologist</li>
-                        <li class="career-item">MRI Technologist</li>
-                        <li class="career-item">Ultrasound Technician</li>
-                        <li class="career-item">Nuclear Medicine Technologist</li>
-                        <li class="career-item">CT Scan Technologist</li>
-                        <li class="career-item">Medical Laboratory Technologist</li>
-                        <li class="career-item">Phlebotomist</li>
-                        <li class="career-item">EKG Technician</li>
-                        <li class="career-item">Cardiovascular Technologist</li>
-                    </ul>
-                </div>
-
-                <div class="career-group">
-                    <h3>Technical Services</h3>
-                    <ul>
-                        <li class="career-item">Surgical Technologist</li>
-                        <li class="career-item">Pharmacy Technician</li>
-                        <li class="career-item">Dental Hygienist</li>
-                        <li class="career-item">Dental Laboratory Technician</li>
-                        <li class="career-item">Optician</li>
-                        <li class="career-item">Orthotist/Prosthetist</li>
-                        <li class="career-item">Medical Equipment Technician</li>
-                        <li class="career-item">Dialysis Technician</li>
-                    </ul>
+                    <div class="career-group">
+                        <h3>Specialized Nursing</h3>
+                        <ul>
+                            <li>Flight Nurse</li>
+                            <li>Forensic Nurse</li>
+                            <li>Military Nurse</li>
+                            <li>Research Nurse</li>
+                            <li>Informatics Nurse</li>
+                            <li>Legal Nurse Consultant</li>
+                            <li>Pain Management Nurse</li>
+                            <li>Transplant Nurse</li>
+                            <li>Wound Care Nurse</li>
+                            <li>Infection Control Nurse</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div id="mental" class="career-category">
-            <h2>Mental Health Professionals</h2>
-            <div class="career-list">
-                <div class="career-group">
-                    <ul>
-                        <li class="career-item">Clinical Psychologist</li>
-                        <li class="career-item">Counseling Psychologist</li>
-                        <li class="career-item">Mental Health Counselor</li>
-                        <li class="career-item">Marriage and Family Therapist</li>
-                        <li class="career-item">Substance Abuse Counselor</li>
-                        <li class="career-item">Social Worker</li>
-                        <li class="career-item">Behavioral Analyst</li>
-                        <li class="career-item">Art Therapist</li>
-                        <li class="career-item">Child Life Specialist</li>
-                    </ul>
+            <div id="allied" class="career-category">
+                <h2>Allied Health Professions</h2>
+                <div class="career-list">
+                    <div class="career-group">
+                        <h3>Therapy Services</h3>
+                        <ul>
+                            <li>Physical Therapist</li>
+                            <li>Occupational Therapist</li>
+                            <li>Speech-Language Pathologist</li>
+                            <li>Respiratory Therapist</li>
+                            <li>Art Therapist</li>
+                            <li>Music Therapist</li>
+                            <li>Recreation Therapist</li>
+                            <li>Massage Therapist</li>
+                            <li>Athletic Trainer</li>
+                        </ul>
+                    </div>
+
+                    <div class="career-group">
+                        <h3>Diagnostic Services</h3>
+                        <ul>
+                            <li>Radiologic Technologist</li>
+                            <li>MRI Technologist</li>
+                            <li>Ultrasound Technician</li>
+                            <li>Nuclear Medicine Technologist</li>
+                            <li>CT Scan Technologist</li>
+                            <li>Medical Laboratory Technologist</li>
+                            <li>Phlebotomist</li>
+                            <li>EKG Technician</li>
+                            <li>Cardiovascular Technologist</li>
+                        </ul>
+                    </div>
+
+                    <div class="career-group">
+                        <h3>Technical Services</h3>
+                        <ul>
+                            <li>Surgical Technologist</li>
+                            <li>Pharmacy Technician</li>
+                            <li>Dental Hygienist</li>
+                            <li>Dental Laboratory Technician</li>
+                            <li>Optician</li>
+                            <li>Orthotist/Prosthetist</li>
+                            <li>Medical Equipment Technician</li>
+                            <li>Dialysis Technician</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
+            <div id="mental" class="career-category">
+                <h2>Mental Health Professionals</h2>
+                <div class="career-list">
+                    <div class="career-group">
+                        <ul>
+                            <li>Psychiatrist</li>
+                            <li>Child and Adolescent Psychiatrist</li>
+                            <li>Geriatric Psychiatrist</li>
+                            <li>Addiction Psychiatrist</li>
+                            <li>Clinical Psychologist</li>
+                            <li>Neuropsychologist</li>
+                            <li>Counseling Psychologist</li>
+                            <li>School Psychologist</li>
+                            <li>Mental Health Counselor</li>
+                            <li>Marriage and Family Therapist</li>
+                            <li>Substance Abuse Counselor</li>
+                            <li>Behavioral Analyst</li>
+                            <li>Social Worker (Medical/Clinical)</li>
+                            <li>Psychiatric Nurse</li>
+                            <li>Child Life Specialist</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="career-group">
+                <h3>Medical Specialties</h3>
+                <ul>
+                    <li class="specialty">
+                        <h4>Cardiovascular Medicine</h4>
+                        <ul>
+                            <li>General Cardiologist</li>
+                            <li>Interventional Cardiologist</li>
+                            <li>Electrophysiologist</li>
+                            <li>Pediatric Cardiologist</li>
+                            <li>Heart Failure Specialist</li>
+                            <li>Cardiac Imaging Specialist</li>
+                        </ul>
+                    </li>
+                    <li class="specialty">
+                        <h4>Neurology</h4>
+                        <ul>
+                            <li>General Neurologist</li>
+                            <li>Pediatric Neurologist</li>
+                            <li>Epileptologist</li>
+                            <li>Movement Disorders Specialist</li>
+                            <li>Neuromuscular Medicine Specialist</li>
+                            <li>Stroke Specialist</li>
+                            <li>Multiple Sclerosis Specialist</li>
+                            <li>Headache Specialist</li>
+                        </ul>
+                    </li>
+                    <li class="specialty">
+                        <h4>Oncology</h4>
+                        <ul>
+                            <li>Medical Oncologist</li>
+                            <li>Radiation Oncologist</li>
+                            <li>Pediatric Oncologist</li>
+                            <li>Hematologist-Oncologist</li>
+                            <li>Gynecologic Oncologist</li>
+                            <li>Neuro-oncologist</li>
+                        </ul>
+                    </li>
+                    <li class="specialty">
+                        <h4>Endocrinology</h4>
+                        <ul>
+                            <li>Adult Endocrinologist</li>
+                            <li>Pediatric Endocrinologist</li>
+                            <li>Reproductive Endocrinologist</li>
+                            <li>Thyroid Specialist</li>
+                            <li>Diabetes Specialist</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <section class="career-category">
+                <h2>2. Dental and Oral Health</h2>
+
+                <div class="career-group">
+                    <ul>
+                        <li>General Dentist</li>
+                        <li>Orthodontist</li>
+                        <li>Periodontist</li>
+                        <li>Endodontist</li>
+                        <li>Oral and Maxillofacial Surgeon</li>
+                        <li>Pediatric Dentist</li>
+                        <li>Prosthodontist</li>
+                        <li>Dental Hygienist</li>
+                        <li>Dental Assistant</li>
+                        <li>Dental Laboratory Technician</li>
+                        <li>Oral Pathologist</li>
+                        <li>Dental Public Health Specialist</li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <section class="career-category">
+                <h2>5. Diagnostic and Laboratory Careers</h2>
+
+                <div class="career-group">
+                    <h3>Medical Laboratory</h3>
+                    <ul>
+                        <li>Medical Laboratory Scientist</li>
+                        <li>Clinical Laboratory Technologist</li>
+                        <li>Histotechnologist</li>
+                        <li>Cytotechnologist</li>
+                        <li>Blood Bank Technologist</li>
+                        <li>Microbiology Technologist</li>
+                        <li>Molecular Biology Technologist</li>
+                        <li>Phlebotomist</li>
+                        <li>Pathologist Assistant</li>
+                    </ul>
+                </div>
+
+                <div class="career-group">
+                    <h3>Medical Imaging</h3>
+                    <ul>
+                        <li>Radiologic Technologist</li>
+                        <li>MRI Technologist</li>
+                        <li>CT Scan Technologist</li>
+                        <li>Ultrasound Technician</li>
+                        <li>Nuclear Medicine Technologist</li>
+                        <li>Mammography Technologist</li>
+                        <li>Cardiovascular Technologist</li>
+                        <li>Interventional Radiology Technologist</li>
+                    </ul>
+                </div>
+
+                <h2>7. Pharmacy and Pharmaceutical Careers</h2>
+
+                <div class="career-group">
+                    <ul>
+                        <li>Retail Pharmacist</li>
+                        <li>Clinical Pharmacist</li>
+                        <li>Hospital Pharmacist</li>
+                        <li>Nuclear Pharmacist</li>
+                        <li>Oncology Pharmacist</li>
+                        <li>Pediatric Pharmacist</li>
+                        <li>Pharmacy Technician</li>
+                        <li>Pharmaceutical Researcher</li>
+                        <li>Clinical Research Pharmacist</li>
+                        <li>Pharmacy Informaticist</li>
+                        <li>Compounding Pharmacist</li>
+                        <li>Pharmaceutical Sales Representative</li>
+                    </ul>
+                </div>
+
+                <h2>8. Alternative and Complementary Medicine</h2>
+
+                <div class="career-group">
+                    <ul>
+                        <li>Chiropractor</li>
+                        <li>Acupuncturist</li>
+                        <li>Traditional Chinese Medicine Practitioner</li>
+                        <li>Naturopathic Doctor</li>
+                        <li>Ayurvedic Practitioner</li>
+                        <li>Homeopathic Practitioner</li>
+                        <li>Herbalist</li>
+                        <li>Reflexologist</li>
+                        <li>Yoga Therapist</li>
+                    </ul>
+                </div>
+
+                <h2>9. Public Health and Administration</h2>
+
+                <div class="career-group">
+                    <ul>
+                        <li>Public Health Officer</li>
+                        <li>Epidemiologist</li>
+                        <li>Biostatistician</li>
+                        <li>Health Policy Analyst</li>
+                        <li>Healthcare Administrator</li>
+                        <li>Hospital Manager</li>
+                        <li>Medical Practice Manager</li>
+                        <li>Health Information Manager</li>
+                        <li>Quality Improvement Coordinator</li>
+                        <li>Healthcare Consultant</li>
+                        <li>Patient Navigator</li>
+                        <li>Medical Records Administrator</li>
+                        <li>Healthcare Risk Manager</li>
+                    </ul>
+                </div>
+
+
+
+                <h2>10. Emergency Medical Services</h2>
+
+                <div class="career-group">
+                    <ul>
+                        <li>Emergency Medical Technician (EMT)</li>
+                        <li>Advanced EMT</li>
+                        <li>Paramedic</li>
+                        <li>Critical Care Paramedic</li>
+                        <li>Flight Paramedic</li>
+                        <li>Tactical Paramedic</li>
+                        <li>Emergency Room Physician</li>
+                        <li>Emergency Room Nurse</li>
+                        <li>Emergency Medical Dispatcher</li>
+                        <li>Search and Rescue Medical Specialist</li>
+                    </ul>
+                </div>
+
+
+
+                <h2>11. Medical Research and Academia</h2>
+
+                <div class="career-group">
+                    <ul>
+                        <li>Medical Scientist</li>
+                        <li>Clinical Research Coordinator</li>
+                        <li>Clinical Research Coordinator</li>
+                        <li>Biomedical Researcher</li>
+                        <li>Pharmaceutical Scientist</li>
+                        <li>Clinical Trial Manager</li>
+                        <li>Research Nurse</li>
+                        <li>Medical Statistician</li>
+                        <li>Medical Writer</li>
+                        <li>Public Health Researcher</li>
+                        <li>Health Data Analyst</li>
+                    </ul>
+                </div>
+
+           </div>
+      </div>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2025 Career Roadmap. All rights reserved.</p>
+</footer>
+<button id="goToTop" onclick="scrollToTop()">↑</button>
+</body>
+</html>

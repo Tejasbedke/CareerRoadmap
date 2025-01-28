@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Account Verification</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+<div class="notification" id="successNotification"></div>
+
+<a href="index.html" class="home-btn">Home</a>
+
+<div class="container">
+    <div class="bg" style="background-image: url('/images/bg-01.jpg');">
+        <div class="cardl verification-card">
+            <div class="verification-content">
+                <h1 class="title">Verify Your Account</h1>
+
+                <div class="verification-info">
+                    <p>We've sent a verification code to your email address.</p>
+                    <p>Please enter the 6-digit code below:</p>
+                </div>
+
+                <div class="verification-inputs">
+                    <input type="text" maxlength="1" class="verification-digit">
+                    <input type="text" maxlength="1" class="verification-digit">
+                    <input type="text" maxlength="1" class="verification-digit">
+                    <input type="text" maxlength="1" class="verification-digit">
+                    <input type="text" maxlength="1" class="verification-digit">
+                    <input type="text" maxlength="1" class="verification-digit">
+                </div>
+
+                <div class="verification-actions">
+                    <button class="btn verify-btn" onclick="verifyCode()">
+                        <span class="btn-bg"></span>
+                        <span class="btn-text">Verify</span>
+                    </button>
+
+                    <div class="resend-section">
+                        <p>Didn't receive the code?</p>
+                        <a href="#" onclick="resendCode()">Resend Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="authentication.js" defer></script>
+</body>
+</html>

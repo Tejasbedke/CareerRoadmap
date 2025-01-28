@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Career Roadmap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .faq-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .category {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .category:hover {
+            transform: translateY(-2px);
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #f8f9fa;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 1.5rem;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .still-questions {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .contact-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <p>Find answers to common questions about Career Roadmap</p>
+    </div>
+</header>
+
+<main class="container">
+    <div class="search-container">
+        <input type="text" class="search-box" placeholder="Search FAQs...">
+    </div>
+
+    <div class="faq-categories">
+        <div class="category">
+            <h3>Getting Started</h3>
+            <p>Basic information about our platform</p>
+        </div>
+        <div class="category">
+            <h3>Career Planning</h3>
+            <p>Questions about career guidance</p>
+        </div>
+        <div class="category">
+            <h3>Account & Settings</h3>
+            <p>Managing your profile</p>
+        </div>
+    </div>
+
+    <div class="faq-list">
+        <div class="faq-item">
+            <div class="faq-question">What is Career Roadmap?</div>
+            <div class="faq-answer">
+                Career Roadmap is a comprehensive career guidance platform that helps individuals plan and navigate their professional journey. We provide personalized career planning, skill development resources, and mentorship opportunities to help you achieve your career goals.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How do I get started with Career Roadmap?</div>
+            <div class="faq-answer">
+                Getting started is easy! Simply create an account, complete your profile with your education, skills, and career interests, and our platform will generate a personalized career roadmap for you. You'll then have access to resources, tutorials, and guidance tailored to your goals.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is Career Roadmap free to use?</div>
+            <div class="faq-answer">
+                We offer both free and premium features. Basic career planning tools and resources are available for free. Premium features, including personalized mentorship, advanced assessments, and specialized courses, are available through our subscription plans.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How often is the content updated?</div>
+            <div class="faq-answer">
+                Our content is regularly updated to reflect current industry trends and market demands. We work with industry experts to ensure our resources remain relevant and valuable for our users' career development needs.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I change my career path after starting?</div>
+            <div class="faq-answer">
+                Absolutely! We understand that career goals can change over time. You can modify your career path at any time, and our platform will adjust your roadmap and recommendations accordingly to support your new direction.
+            </div>
+        </div>
+    </div>
+
+    <div class="still-questions">
+        <h2>Still have questions?</h2>
+        <p>Can't find the answer you're looking for? Please reach out to our friendly team.</p>
+        <a href="/contact" class="contact-button">Contact Us</a>
+    </div>
+</main>
+
+<script>
+    // Add click functionality to FAQ items
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const answer = question.nextElementSibling;
+
+            // Toggle active class
+            item.classList.toggle('active');
+            answer.classList.toggle('active');
+        });
+    });
+
+    // Add search functionality
+    const searchBox = document.querySelector('.search-box');
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    searchBox.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question').textContent.toLowerCase();
+            const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+</script>
+</body>
+</html>

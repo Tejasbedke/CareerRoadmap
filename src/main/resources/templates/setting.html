@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .settings-header {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .settings-section {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .setting-item {
+            margin-bottom: 25px;
+        }
+
+        .setting-item label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .setting-item input[type="text"],
+        .setting-item input[type="email"],
+        .setting-item input[type="password"],
+        .setting-item select,
+        .setting-item textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .setting-item textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .color-picker {
+            display: flex;
+            gap: 10px;
+        }
+
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .color-option.selected {
+            border-color: #2196F3;
+        }
+
+        .btn {
+            background: #2196F3;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #1976D2;
+        }
+
+        .save-section {
+            position: sticky;
+            bottom: 0;
+            background: white;
+            padding: 20px;
+            border-top: 1px solid #eee;
+            text-align: right;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            display: none;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .settings-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="settings-header">
+        <h1>Settings</h1>
+        <p>Manage your website preferences and account settings</p>
+    </div>
+
+    <form id="settingsForm">
+        <!-- Account Settings -->
+        <div class="settings-section">
+            <h2>Account Settings</h2>
+            <div class="setting-item">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" value="johndoe">
+            </div>
+            <div class="setting-item">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="john@example.com">
+            </div>
+            <div class="setting-item">
+                <label for="password">Change Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter new password">
+            </div>
+        </div>
+
+        <!-- Appearance Settings -->
+        <div class="settings-section">
+            <h2>Appearance</h2>
+            <div class="setting-item">
+                <label>Theme</label>
+                <div class="color-picker">
+                    <div class="color-option selected" style="background-color: #2196F3;" data-color="#2196F3"></div>
+                    <div class="color-option" style="background-color: #4CAF50;" data-color="#4CAF50"></div>
+                    <div class="color-option" style="background-color: #F44336;" data-color="#F44336"></div>
+                    <div class="color-option" style="background-color: #9C27B0;" data-color="#9C27B0"></div>
+                </div>
+            </div>
+            <div class="setting-item">
+                <label>Dark Mode</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="darkMode">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <label for="fontSize">Font Size</label>
+                <select id="fontSize" name="fontSize">
+                    <option value="small">Small</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Notification Settings -->
+        <div class="settings-section">
+            <h2>Notifications</h2>
+            <div class="setting-item">
+                <label>Email Notifications</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="emailNotif" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <label>Push Notifications</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="pushNotif">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <label for="notifFrequency">Notification Frequency</label>
+                <select id="notifFrequency" name="notifFrequency">
+                    <option value="realtime">Real-time</option>
+                    <option value="daily" selected>Daily Digest</option>
+                    <option value="weekly">Weekly Digest</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Privacy Settings -->
+        <div class="settings-section">
+            <h2>Privacy</h2>
+            <div class="setting-item">
+                <label>Profile Visibility</label>
+                <select id="profileVisibility" name="profileVisibility">
+                    <option value="public">Public</option>
+                    <option value="private" selected>Private</option>
+                    <option value="friends">Friends Only</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label>Activity Status</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="activityStatus" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Save Button -->
+        <div class="save-section">
+            <button type="submit" class="btn">Save Changes</button>
+        </div>
+    </form>
+</div>
+
+<div class="notification" id="saveNotification">
+    Settings saved successfully!
+</div>
+
+<script>
+    // Color picker functionality
+    document.querySelectorAll('.color-option').forEach(option => {
+        option.addEventListener('click', () => {
+            document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('selected'));
+            option.classList.add('selected');
+            // Here you can add logic to apply the selected color theme
+        });
+    });
+
+    // Form submission
+    document.getElementById('settingsForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Collect form data
+        const formData = {
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            darkMode: document.getElementById('darkMode').checked,
+            fontSize: document.getElementById('fontSize').value,
+            emailNotifications: document.getElementById('emailNotif').checked,
+            pushNotifications: document.getElementById('pushNotif').checked,
+            notificationFrequency: document.getElementById('notifFrequency').value,
+            profileVisibility: document.getElementById('profileVisibility').value,
+            activityStatus: document.getElementById('activityStatus').checked
+        };
+
+        // Here you would typically send this data to your backend
+        console.log('Settings to save:', formData);
+
+        // Show success notification
+        const notification = document.getElementById('saveNotification');
+        notification.style.display = 'block';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000);
+    });
+
+    // Dark mode toggle
+    document.getElementById('darkMode').addEventListener('change', (e) => {
+        if (e.target.checked) {
+            document.body.style.background = '#1a1a1a';
+            document.body.style.color = '#fff';
+        } else {
+            document.body.style.background = '#f5f5f5';
+            document.body.style.color = '#333';
+        }
+    });
+
+    // Font size change
+    document.getElementById('fontSize').addEventListener('change', (e) => {
+        document.body.style.fontSize = {
+            'small': '14px',
+            'medium': '16px',
+            'large': '18px'
+        }[e.target.value];
+    });
+</script>
+</body>
+</html>
