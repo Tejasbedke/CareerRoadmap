@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Details</title>
     <style>
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
         }
 
         .container {
@@ -19,111 +26,156 @@
         }
 
         .header {
-            background: #2c3e50;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
             color: white;
-            padding: 40px 0;
+            padding: 50px 0;
+            text-align: center;
+            border-radius: 8px;
             margin-bottom: 30px;
         }
 
         .header h1 {
-            margin-bottom: 10px;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            opacity: 0.85;
         }
 
         .section {
             background: white;
+            padding: 20px;
+            margin: 20px 0;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 25px;
-            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .section h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
         }
 
+        /* Grid for Skills */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
-            margin-top: 20px;
         }
 
-        .skill-item {
-            background: #f7f9fc;
-            padding: 10px;
-            border-radius: 4px;
-            border-left: 4px solid #3498db;
+        .skills-grid div {
+            background: #eef2ff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1rem;
+            color: #5a67d8;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
+        /* Roadmap Timeline */
         .roadmap-timeline {
+
+            padding-left: 20px;
+            margin-top: 20px;
             position: relative;
-            padding: 20px 0;
         }
 
         .roadmap-item {
-            padding: 20px;
-            margin-bottom: 20px;
-            background: #f7f9fc;
-            border-radius: 4px;
-            position: relative;
+            margin-bottom: 15px;
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-        .roadmap-item::before {
-            content: '';
-            position: absolute;
-            left: -20px;
-            top: 50%;
-            width: 12px;
-            height: 12px;
-            background: #3498db;
-            border-radius: 50%;
+        .roadmap-item h3 {
+            color: #2563eb;
         }
 
-        .faq-item {
-            margin-bottom: 20px;
+        .roadmap-progress {
+            height: 10px;
+            background: #34d399;
+            margin: 15px 0;
+            border-radius: 5px;
+            transition: width 0.3s ease;
         }
 
-        .faq-question {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 10px;
+        /* Notes Section */
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: none;
+            height: 100px;
+        }
+
+        .button {
+            background: #6a11cb;
+            color: white;
+            border: none;
+            padding: 10px 15px;
             cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: #2575fc;
+        }
+
+        /* Achievements */
+        #badges div {
+            display: inline-block;
+            background: #e9ffde;
+            color: #3c763d;
+            padding: 8px 12px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Resources List */
+        .resources-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .resources-list li {
+            background: #f0f4ff;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        /* FAQs */
+        #faq-content div {
+            background: #fff7e6;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 4px solid #ffbf00;
+            border-radius: 5px;
         }
 
         .faq-answer {
             display: none;
-            padding: 15px;
-            background: #f7f9fc;
+            color: #444;
+            padding: 5px 10px;
+        }
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background: #4CAF50;
+            color: white;
             border-radius: 4px;
-        }
-
-        .resources-list {
-            list-style: none;
-        }
-
-        .resources-list li {
-            margin-bottom: 15px;
-            padding: 10px;
-            background: #f7f9fc;
-            border-radius: 4px;
-        }
-
-        .resources-list a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+            display: none;
         }
     </style>
 </head>
@@ -153,10 +205,27 @@
     </div>
 
     <!-- Career Roadmap Section -->
-    <div class="section">
-        <h2>Career Roadmap</h2>
-        <div class="roadmap-timeline" id="roadmap-content">
-            <!-- Roadmap will be populated from database -->
+    <div class="container">
+        <div class="section">
+            <h2>Career Roadmap Progress</h2>
+            <div class="roadmap-timeline" id="roadmap-container"></div>
+        </div>
+
+        <div class="section">
+            <h2>Add Notes</h2>
+            <textarea id="note-input" placeholder="Add your thoughts or notes here..."></textarea>
+            <button class="button" onclick="saveNote()">Save Note</button>
+        </div>
+
+        <div class="section">
+            <h2>Your Notes</h2>
+            <div id="user-notes"></div>
+        </div>
+
+        <!-- Achievements Section -->
+        <div class="section">
+            <h2>Achievements</h2>
+            <div id="badges"></div>
         </div>
     </div>
 
@@ -183,9 +252,112 @@
             <!-- FAQs will be populated from database -->
         </div>
     </div>
-</div>
+    <button class="button" onclick="showNotification()">Show Notification</button>
+    <div class="notification" id="notification">Notification Message</div>
 
+</div>
 <script>
+    function showNotification() {
+        const notification = document.getElementById('notification');
+        notification.style.display = 'block';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 2000);
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'c') {
+            const chatWidget = document.getElementById('chatWidget');
+            chatWidget.style.display = chatWidget.style.display === 'none' ? 'block' : 'none';
+        }
+    });
+    const sampleRoadmapData = [
+        { title: 'Beginner Level', description: 'Start with the basics of programming.', completed: false },
+        { title: 'Intermediate Level', description: 'Develop web applications and learn databases.', completed: true },
+        { title: 'Advanced Level', description: 'Work on large-scale projects and system architecture.', completed: false }
+    ];
+
+    const achievements = [
+        { condition: 1, badge: 'Early Bird Achievement' },
+        { condition: 2, badge: 'Master Tracker Achievement' },
+        { condition: 3, badge: 'Career Explorer Award' },
+        { condition: 4, badge: 'Notes Champion' }
+    ];
+
+    // Render Roadmap
+    function renderRoadmap(data) {
+        const container = document.getElementById('roadmap-container');
+        container.innerHTML = '';
+
+        data.forEach((step, index) => {
+            const item = document.createElement('div');
+            item.className = 'roadmap-item';
+            item.innerHTML = `
+                <h3>${step.title}</h3>
+                <p>${step.description}</p>
+                <input type="checkbox" id="step-${index}" ${step.completed ? 'checked' : ''}>
+                <label for="step-${index}">Mark as Complete</label>
+            `;
+            container.appendChild(item);
+        });
+
+        // Attach change event to update progress
+        document.querySelectorAll('.roadmap-item input').forEach((checkbox, idx) => {
+            checkbox.addEventListener('change', () => {
+                sampleRoadmapData[idx].completed = checkbox.checked;
+                updateProgress();
+            });
+        });
+
+        updateProgress();
+    }
+
+    // Update Progress Bar and Check Achievements
+    function updateProgress() {
+        const totalSteps = sampleRoadmapData.length;
+        const completedSteps = sampleRoadmapData.filter(step => step.completed).length;
+        const progressPercentage = (completedSteps / totalSteps) * 100;
+
+        if (!document.querySelector('.roadmap-progress')) {
+            const progressBar = document.createElement('div');
+            progressBar.className = 'roadmap-progress';
+            document.getElementById('roadmap-container').appendChild(progressBar);
+        }
+
+        document.querySelector('.roadmap-progress').style.width = `${progressPercentage}%`;
+
+        checkAchievements(completedSteps);
+    }
+
+    // Check and Display Achievements
+    function checkAchievements(completedSteps) {
+        const badgeContainer = document.getElementById('badges');
+        badgeContainer.innerHTML = '';
+        achievements.forEach(achievement => {
+            if (completedSteps >= achievement.condition) {
+                const badgeDiv = document.createElement('div');
+                badgeDiv.className = 'badge';
+                badgeDiv.textContent = achievement.badge;
+                badgeContainer.appendChild(badgeDiv);
+            }
+        });
+    }
+
+    // Save Notes
+    function saveNote() {
+        const noteInput = document.getElementById('note-input');
+        const noteText = noteInput.value.trim();
+        if (noteText) {
+            const noteDiv = document.createElement('div');
+            noteDiv.className = 'roadmap-item-note';
+            noteDiv.textContent = noteText;
+            document.getElementById('user-notes').appendChild(noteDiv);
+            noteInput.value = '';
+        }
+    }
+
+    // Initialize the roadmap
+    renderRoadmap(sampleRoadmapData);
     // Function to populate career details
     function populateCareerDetails(careerData) {
         // Update header

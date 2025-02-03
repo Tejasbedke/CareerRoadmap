@@ -99,15 +99,7 @@
     padding-left: 1rem;
 }
 
-.top-nav {
-    display: flex;
-    overflow: overlay;
-    background: var(--primary-color);
-    padding: 1rem;
-    margin: -2rem -2rem 2rem -2rem;
-    border-radius: 12px 12px 0 0;
-    color: white;
-}
+
 
 .nav-links {
     display: flex;

@@ -8,11 +8,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 
 import java.io.IOException;
-
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.stream.Collectors;
 @Controller
 public class roadmapcontroller {
 
@@ -29,7 +33,22 @@ public class roadmapcontroller {
         return "index"; // Corresponds to src/main/resources/templates/index.html
 
     }
+    @Controller
+    public class CardController {
 
+        private static final String TEMPLATE_PATH = "src/main/resources/templates/";
+
+        @GetMapping("/cards/{cardFile}")
+        @ResponseBody
+        public String getCardFile(@PathVariable String cardFile) throws IOException {
+            String filePath = TEMPLATE_PATH + cardFile + ".html";
+            try {
+                return Files.readString(Paths.get(filePath));
+            } catch (IOException e) {
+                throw new IOException("Error reading file: " + filePath, e);
+            }
+        }
+    }
    @GetMapping("/law")
     public  String law(){
         return "law";
@@ -166,6 +185,7 @@ public class roadmapcontroller {
         // Perform a redirect to the signup-success.html page
         return "redirect:/verification";  // This will redirect the user to /signup-success
     }
+
 
 
    /* @GetMapping("/profile-pic/{userId}")

@@ -14,25 +14,7 @@
 
 
     <div id="divv" class="container">
-        <div class="top-nav">
-            <div class="nav-links">
-                <a href="#cropscience" class="nav-link">Agriculture and Crop Science</a>
-                <a href="#horticulture" class="nav-link">Horticulture</a>
-                <a href="#animal" class="nav-link">Animal Husbandry</a>
-                <a href="#fisher" class="nav-link">Fisheries and Aquaculture</a>
-                <a href="#forestry" class="nav-link">Forestry </a>
-                <a href="#engineering" class="nav-link">Agricultural Engineering</a>
-                <a href="#economics" class="nav-link">Agricultural Economics and Business</a>
-                <a href="#food" class="nav-link">Food Science</a>
-                <a href="#plant" class="nav-link">Plant Pathology</a>
-                <a href="#soil" class="nav-link">Soil and Water Management</a>
-                <a href="#biotech" class="nav-link">Biotechnology and Genetic Engineering</a>
-                <a href="#agro" class="nav-link">Agro-Industry </a>
-                <a href="#environmental" class="nav-link">Environmental and Sustainable Agriculture</a>
-                <a href="#policy" class="nav-link">Policy, Advocacy, and Education</a>
-                <a href="#allied" class="nav-link">Allied Fields</a>
-            </div>
-        </div>
+
 
         <!-- Agriculture and Crop Science -->
         <div id="cropscience" class="career-category">
@@ -434,5 +416,38 @@
     </footer>
     <button id="goToTop" onclick="scrollToTop()">↑</button>
 </div>
+<script>
+    const careers = [
+        "Agronomist", "Crop Scientist", "Plant Breeder", "Veterinarian", "Food Technologist",
+        "Soil Scientist", "Irrigation Engineer", "Marine Biologist", "Agricultural Economist"
+    ];
+
+    function filterResults() {
+        const query = document.getElementById("search-input").value.toLowerCase();
+        const filteredCareers = careers.filter(career => career.toLowerCase().includes(query));
+
+        displayResults(filteredCareers);
+    }
+
+    function displayResults(filteredCareers) {
+        const resultsContainer = document.getElementById("search-results");
+
+        // Clear previous results
+        resultsContainer.innerHTML = '';
+
+        if (filteredCareers.length > 0) {
+            const ul = document.createElement('ul');
+            filteredCareers.forEach(career => {
+                const li = document.createElement('li');
+                li.textContent = career;
+                ul.appendChild(li);
+            });
+            resultsContainer.appendChild(ul);
+        } else {
+            resultsContainer.textContent = 'No results found.';
+        }
+    }
+
+</script>
 </body>
 </html>
