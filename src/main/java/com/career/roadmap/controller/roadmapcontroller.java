@@ -3,6 +3,7 @@ package com.career.roadmap.controller;
 import com.career.roadmap.Sbeans.UserDetail;
 import com.career.roadmap.repository.UserRepository;
 
+import com.career.roadmap.services.MailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,9 @@ public class roadmapcontroller {
 
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    MailService mailService;
+
 
     @GetMapping("/")
    public String home() {
@@ -108,8 +112,16 @@ public class roadmapcontroller {
     public String showaviation() {
         return "aviation";
     }
+
     @GetMapping("verification")
-    public String showverification() {return "verification";}
+    public String showverification(@RequestParam String otp)
+      {
+        if(mailService.verifyOTP(otp)){
+            return "home";
+        }
+        else
+            return "verification";
+      }
     @GetMapping("aboutus")
     public String showaboutus() {return "aboutus";}
     @GetMapping("admin")
@@ -163,6 +175,7 @@ public class roadmapcontroller {
         // Save user details with profile picture
         userRepository.save(userDetail);
 
+        mailService.sendMail(userDetail.getEmail());
         // Perform a redirect to the signup-success.html page
         return "redirect:/verification";  // This will redirect the user to /signup-success
     }
