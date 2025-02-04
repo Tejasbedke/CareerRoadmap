@@ -3,7 +3,35 @@ const menu = document.querySelector('.menu');
 const body = document.body;
 const careeroptions = document.querySelector('.career-options');
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Example: Simulate logged-in user state using localStorage
+    const loggedInUser = localStorage.getItem("userName");
+    const profilePic = localStorage.getItem("profilePic") || "default-profile.png";
 
+    if (loggedInUser) {
+        document.getElementById("userProfile").style.display = "flex";
+        document.getElementById("userName").textContent = loggedInUser;
+        document.getElementById("profilePic").src = profilePic;
+
+        // Hide login and signup buttons
+        document.getElementById("loginBtn").style.display = "none";
+        document.getElementById("signupBtn").style.display = "none";
+    }
+
+    // Logout functionality
+    document.getElementById("logoutBtn").addEventListener("click", function () {
+        localStorage.removeItem("userName");
+        localStorage.removeItem("profilePic");
+        window.location.reload(); // Reload to reset the UI
+    });
+});
+
+// Example function for setting user after login (for demo)
+function simulateLogin() {
+    localStorage.setItem("userName", "John Doe");  // Replace with actual username
+    localStorage.setItem("profilePic", "path-to-user-pic.jpg"); // Replace with user profile picture URL
+    window.location.reload();
+}
 // Toggle the visibility of the menu when the button is clicked
 function toggleMenu() {
     menu.classList.toggle("visible");
@@ -197,4 +225,21 @@ userInput.addEventListener('keypress', (e) => {
 // Initialize chat widget
 document.addEventListener('DOMContentLoaded', () => {
     chatWidget.style.display = 'none';
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.querySelector(".search-input");
+    const careerItems = document.querySelectorAll(".career-item");
+
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase().trim();
+
+        careerItems.forEach(item => {
+            const title = item.querySelector("h3").textContent.toLowerCase();
+            if (title.includes(query) || query === "") {
+                item.style.display = "block"; // Show matching cards
+            } else {
+                item.style.display = "none"; // Hide non-matching cards
+            }
+        });
+    });
 });

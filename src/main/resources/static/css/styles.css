@@ -13,11 +13,25 @@ main {
     background-color: rgba(0, 0, 0, 0.0);
     margin-top: 10px;
 }
-
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.profilepic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.user-name {
+    font-size: 16px;
+    font-weight: bold;
+}
 /* Background Image */
 .bgimage {
     width: 100%;
-    padding: 15px;
+
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -31,22 +45,20 @@ body.menu-open .career-options {
 
 /* Header Styling */
 header {
-    background-color: #000;
     line-height: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
+    position: sticky;
     top: 10px;
     left: 20px;
-    right: 20px;
+    right:  20px;
+    background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(5px);
     padding: 8px 20px;
     z-index: 100;
-    border-radius: 80px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 /* Menu Styling */
 .menu-container {
     display: flex;
@@ -326,6 +338,70 @@ footer {
     bottom: 0;
     left: 0;
 }
+@media (max-width: 1290px) {
+    .search-input {
+        width: 200px;
+    }
+}
+@media (max-width: 1190px) {
+    header{
+        border-radius: 0px;
+        height: 10%;
+        position: inherit;
+
+    }
+    .menu-btn {
+        display: block;
+        margin-right: 15px;
+    }
+
+    nav.menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: -20px;
+        right: -20px;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        height: 100vh;
+        width: 30%;
+    }
+
+    nav.menu.visible {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav.menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .search-container {
+        width: 100%;
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .search-input {
+        width: calc(100% - 50px);
+    }
+
+    .auth-buttons {
+        justify-content: center;
+
+    }
+}
+@media (max-width: 700px) {
+    header{
+        height: 7%;
+    }
+    nav.menu {
+        width: 80%;
+    }
+}
 
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
@@ -341,39 +417,7 @@ footer {
         font-size: 32px;
     }
 
-    nav.menu ul li a {
-        font-size: 16px;
-    }
 
-    nav.menu {
-        padding-top: 50px;
-        line-height: 2;
-        height: 720px;
-        width: 70%;
-        top: 70px;
-        left: -100%;
-        border-radius: 15px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        transition: left 0.5s ease-in-out;
-    }
-
-    header {
-        background-color: rgba(0, 0, 0, 0.9);
-    }
-
-    nav.menu.visible {
-        left: 5%;
-    }
-
-    .menu-btn {
-        font-size: 30px;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-    }
 }
 
 @media screen and (max-width: 480px) {
@@ -381,13 +425,6 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .menu-btn {
-        font-size: 25px;
-    }
-
-    nav.menu ul li a {
-        font-size: 16px;
-    }
 
     .logo-container {
         flex-direction: column;
