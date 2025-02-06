@@ -27,16 +27,21 @@ public class roadmapcontroller {
     MailService mailService;
 
 
-    @GetMapping("/")
+    @GetMapping("/index")
    public String home() {
         return "index"; // Corresponds to src/main/resources/templates/index.html
 
    }
-    @GetMapping("/index")
-    public String index() {
-        return "index"; // Corresponds to src/main/resources/templates/index.html
+    @GetMapping("/index1")
+    public String index1() {
+        return "index1"; // Corresponds to src/main/resources/templates/index.html
 
     }
+    /*@GetMapping("/index")
+    public String index() {
+        return "redirect:/index.html"; // This will look in src/main/resources/static
+    }*/
+
     @Controller
     public class CardController {
 
@@ -132,15 +137,7 @@ public class roadmapcontroller {
         return "aviation";
     }
 
-    @GetMapping("verification")
-    public String showverification(@RequestParam String otp)
-      {
-        if(mailService.verifyOTP(otp)){
-            return "home";
-        }
-        else
-            return "verification";
-      }
+
     @GetMapping("aboutus")
     public String showaboutus() {return "aboutus";}
     @GetMapping("admin")
@@ -196,9 +193,23 @@ public class roadmapcontroller {
 
         mailService.sendMail(userDetail.getEmail());
         // Perform a redirect to the signup-success.html page
-        return "redirect:/verification";  // This will redirect the user to /signup-success
+        return "/verification";  // This will redirect the user to /signup-success
     }
 
+    @GetMapping("/verification")
+    public String showverification()
+    {
+        return "/verification";
+    }
+    @PostMapping("/verification")
+    public String verifyOtp() {
+        String otp=mailService.otp;
+        if (mailService.verifyOTP(otp)) {
+            return "/index1"; // Correct usage of redirect
+        } else {
+            return "/index1"; // You can add query params to show error messages
+        }
+    }
 
 
    /* @GetMapping("/profile-pic/{userId}")
