@@ -90,7 +90,7 @@ function verifyCode() {
     if (code.length === 6) {
         showNotification('Verification successful! Welcome to your account.');
         setTimeout(() => {
-            window.location.href = 'index.html';
+            window.location.href = '/index';
         }, 2000);
     } else {
         showNotification('Please enter a complete 6-digit code', 'error');
