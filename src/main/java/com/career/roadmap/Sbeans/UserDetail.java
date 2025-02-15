@@ -12,8 +12,6 @@ import org.springframework.web.multipart.MultipartFile;
 @Table(name = "usersDetails")
 @Data
 public class UserDetail {
-
-
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;

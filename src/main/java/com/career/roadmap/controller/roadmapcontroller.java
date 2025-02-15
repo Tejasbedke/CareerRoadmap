@@ -1,8 +1,10 @@
 package com.career.roadmap.controller;
 
+import com.career.roadmap.Sbeans.CareerRoadmap;
 import com.career.roadmap.Sbeans.UserDetail;
 import com.career.roadmap.repository.UserRepository;
 
+import com.career.roadmap.services.CareerRoadmapService;
 import com.career.roadmap.services.MailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,7 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Optional;
 import java.util.stream.Collectors;
 @Controller
 public class roadmapcontroller {
@@ -25,6 +28,8 @@ public class roadmapcontroller {
     UserRepository userRepository;
     @Autowired
     MailService mailService;
+    @Autowired
+    private CareerRoadmapService careerRoadmapService;
 
 
     @GetMapping("/index")
@@ -224,6 +229,15 @@ public class roadmapcontroller {
             return ResponseEntity.notFound().build();
         }
     }*/
+
+    //Method to Retrieve Careeer Path from the DataBase
+    @GetMapping("/{careerTitle}")
+    public ResponseEntity<CareerRoadmap> getCareerByTitle(@PathVariable String careerTitle) {
+        Optional<CareerRoadmap> career = careerRoadmapService.getCareerDetailsByTitle(careerTitle);
+
+        return career.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
 }
 
 
